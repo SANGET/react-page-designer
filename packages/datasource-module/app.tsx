@@ -3,9 +3,9 @@ import React from "react";
 import { Button, List } from "antd";
 import { ShowModal } from "@deer-ui/core";
 import { FiEdit, FiDelete } from "react-icons/fi";
-// import { PlatformContext } from "@provider-app/page-designer/utils";
 import { ApiCreator } from "./ApiCreator";
 import { MetaCreator } from "./MetaCreator";
+import { PlatformContext } from "../AppEntry/src/utils";
 
 import "./style.scss";
 

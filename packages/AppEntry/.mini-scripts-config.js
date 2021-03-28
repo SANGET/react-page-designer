@@ -176,5 +176,24 @@ module.exports = {
   preRun: () => {
     // 复制组件 meta 到 public 服务
     cpWidgetMeta();
+
+    genEnvConfig("provider-env-config.dev.json", {
+      paasServerUrl: "http://192.168.14.140:6090",
+      FEResourceServerUrl: "http://localhost:3000/node-web",
+      previewAppEntryUrl: "http://localhost:22110",
+      toolHelperUrl: "http://192.168.14.181:6677",
+      platformUIUrl: "http://localhost:38000/platform-ui.js",
+      externalScripts: [],
+    });
+    // 生成生成环境的配置
+    genEnvConfig("provider-env-config.prod.json", {
+      paasServerUrl: "http://192.168.14.140:6090",
+      FEResourceServerUrl: "http://192.168.14.166:22010/node-web",
+      previewAppEntryUrl: "http://192.168.14.166:22110",
+      toolHelperUrl: "http://192.168.14.181:6677",
+      externalScripts: [],
+      platformUIUrl:
+        "http://localhost:38000/platform-ui.js",
+    });
   },
 };

@@ -55,3 +55,5 @@ externals-libs
 
 widget-meta-store
 exp-meta-store
+
+packages/AppEntry/public/runtime

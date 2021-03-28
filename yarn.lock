@@ -11855,6 +11855,11 @@ pnp-webpack-plugin@1.2.1:
   dependencies:
     ts-pnp "^1.0.0"
 
+popper.js@^1.11.1:
+  version "1.16.1"
+  resolved "https://registry.npm.taobao.org/popper.js/download/popper.js-1.16.1.tgz#2a223cb3dc7b6213d740e40372be40de43e65b1b"
+  integrity sha1-KiI8s9x7YhPXQOQDcr5A3kPmWxs=
+
 portfinder@^1.0.26:
   version "1.0.28"
   resolved "https://registry.npm.taobao.org/portfinder/download/portfinder-1.0.28.tgz#67c4622852bd5374dd1dd900f779f53462fac778"
@@ -13427,6 +13432,13 @@ react-responsive@^8.0.1:
     matchmediaquery "^0.3.0"
     prop-types "^15.6.1"
     shallow-equal "^1.1.0"
+
+react-tippy@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.npm.taobao.org/react-tippy/download/react-tippy-1.4.0.tgz#e8a8b4085ec985e5c94fe128918b733b588a1465"
+  integrity sha1-6Ki0CF7JheXJT+EokYtzO1iKFGU=
+  dependencies:
+    popper.js "^1.11.1"
 
 react-transition-group@^4.4.1:
   version "4.4.1"

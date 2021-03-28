@@ -1,4 +1,4 @@
-import { Button, CloseModal, DropdownWrapper, ShowModal } from "@deer-ui/core";
+import { Button, CloseModal, ShowModal } from "@deer-ui/core";
 import {
   generatePageCode,
   previewAppService,
@@ -7,63 +7,14 @@ import {
 // import { getAppPreviewUrl } from "@provider-app/provider-app-common/config";
 import { message, Modal } from "antd";
 import React, { useState } from "react";
+import { BiMobileAlt, BiDesktop } from "react-icons/bi";
 import { getAppPreviewUrl } from "@provider-app/provider-app-common/config/getPreviewUrl";
 import { loadPropItemMetadata } from "@provider-app/provider-app-common/services/widget-loader";
+import { Tooltip } from "react-tippy";
 import { PlatformContext } from "../../utils";
 import { PageConfigContainer } from "../PDPageConfiguration";
 
 const isDevEnv = process.env.NODE_ENV === "development";
-
-function syntaxHighlight(json) {
-  json = json
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
-  return json.replace(
-    /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
-    function (match) {
-      let cls = "number";
-      if (/^"/.test(match)) {
-        if (/:$/.test(match)) {
-          cls = "key";
-        } else {
-          cls = "string";
-        }
-      } else if (/true|false/.test(match)) {
-        cls = "boolean";
-      } else if (/null/.test(match)) {
-        cls = "null";
-      }
-      return `<span class="${cls}">${match}</span>`;
-    }
-  );
-}
-
-const prepareData = async () => {
-  const [propItemData] = await Promise.all([loadPropItemMetadata()]);
-
-  return propItemData;
-};
-
-const JSONDisplayer = ({ jsonData }) => {
-  return (
-    <pre
-      dangerouslySetInnerHTML={{
-        __html: syntaxHighlight(JSON.stringify(jsonData, null, 2)),
-      }}
-    ></pre>
-  );
-};
-
-const PropDataDisplayer = () => {
-  const [data, setData] = useState({});
-  React.useEffect(() => {
-    prepareData().then((propData) => {
-      setData(propData);
-    });
-  }, []);
-  return <JSONDisplayer jsonData={data} />;
-};
 
 const ReleaseBtn = ({ onReleasePage }) => {
   const [loading, setLoading] = useState(false);
@@ -123,49 +74,6 @@ const PreviewBtn = ({ appLocation, getAppDescData, genPageCode }) => {
       }}
     >
       预览
-    </Button>
-  );
-};
-/**
- * 页面事件-低代码入口
- */
-const PageEventLowCodeEditor = ({
-  pageState,
-  platformCtx,
-  eventType,
-  changePageState,
-  title,
-}) => {
-  return (
-    <Button
-      className="mb-4"
-      color="default"
-      onClick={() => {
-        const closeModal = platformCtx.selector.openLowCodeImporter({
-          defaultValue:
-            (pageState.lowCode && pageState.lowCode[eventType]) || undefined,
-          eventType,
-          platformCtx,
-          onSubmit: (lowCodeKey) => {
-            const value = pageState.lowCode || {};
-            changePageState({
-              ...pageState,
-              lowCode: {
-                ...value,
-                [eventType]: {
-                  code: lowCodeKey.code,
-                  simpleCode: lowCodeKey.codeSimple?.code,
-                  params: lowCodeKey.codeSimple?.params,
-                  use: lowCodeKey.use,
-                },
-              },
-            });
-            closeModal();
-          },
-        });
-      }}
-    >
-      {title}
     </Button>
   );
 };
@@ -229,115 +137,69 @@ const ToolbarCustom: React.FC<ToolbarCustomProps> = ({
         {(platformCtx) => {
           return (
             <div className="flex items-center px-2" style={{ height: "100%" }}>
-              {/* <span className="text-gray-500">新手教程制作中，敬请期待</span> */}
+              <span className="text-gray-500">帮助文档制作中</span>
               {/* 开发用的，查看所有属性项的按钮 */}
               <span className="flex"></span>
-              {/* {
-                <DropdownWrapper
-                  trigger="hover"
-                  className="mr10"
-                  outside
-                  overlay={(hide) => {
-                    return (
-                      <div className="p-4 flex flex-col">
-                        {[
-                          { alias: "加载事件", type: "onPageLoad" },
-                          { alias: "页面状态更新事件", type: "onPageUpdate" },
-                          { alias: "销毁事件", type: "onPageDestroy" },
-                          { alias: "窗口大小调整事件", type: "onPageResize" },
-                        ].map(({ alias, type }) => (
-                          <PageEventLowCodeEditor
-                            key={type}
-                            eventType={type}
-                            title={alias}
-                            platformCtx={platformCtx}
-                            changePageState={changePageState}
-                            pageState={pageState}
-                          />
-                        ))}
-                      </div>
-                    );
-                  }}
-                >
-                  页面事件-低代码
-                </DropdownWrapper>
-              } */}
-              <DropdownWrapper
-                trigger="hover"
-                className="mr10"
-                outside
-                overlay={(hide) => {
-                  return (
-                    <div className="p-4 flex flex-col">
-                      <Button
-                        className="mb-4"
-                        color="default"
-                        onClick={(e) => {
-                          const modalID = ShowModal({
-                            title: "页面设置",
-                            width: "85%",
-                            children: ({ close }) => {
-                              return (
-                                <div>
-                                  <PropDataDisplayer />
-                                </div>
-                              );
-                            },
-                            onClose: () => {
-                              CloseModal(modalID);
-                            },
-                          });
-                        }}
-                      >
-                        查看所有属性项
-                      </Button>
-                      <Button
-                        className="mb-4"
-                        color="default"
-                        onClick={(e) => {
-                          genPageCode().then((res) => {
-                            const pageCode =
-                              res?.pageCode || "// 获取生成代码失败";
-                            platformCtx.selector.openLowCodeEditor({
-                              defaultValue: {
-                                code: pageCode,
-                              },
-                              onSubmit: () => {},
-                              eventType: "",
-                            });
-                          });
-                        }}
-                      >
-                        查看页面源代码
-                      </Button>
-                      <Button
-                        className="mb-4"
-                        color="default"
-                        onClick={(e) => {
-                          ShowModal({
-                            title: "页面 DSL",
-                            children: () => {
-                              return <JSONDisplayer jsonData={appDescData} />;
-                            },
-                          });
-                        }}
-                      >
-                        查看页面 DSL
-                      </Button>
-                    </div>
-                  );
-                }}
-              >
-                开发者选项
-              </DropdownWrapper>
+              <Tooltip title="PC 模式">
+                <BiDesktop className="text-2xl text-blue-600 mr-4 active" />
+              </Tooltip>
+              <Tooltip title="移动设备模式">
+                <BiMobileAlt className="text-2xl text-gray-600" />
+              </Tooltip>
+              <span className="flex"></span>
               {/* <Button
-                className="mr10"
+                className="mr-2"
                 color="default"
                 onClick={(e) => {
-                  setIsShowPageSetting(true);
+                  const modalID = ShowModal({
+                    title: "页面设置",
+                    width: "85%",
+                    children: ({ close }) => {
+                      return (
+                        <div>
+                          <PropDataDisplayer />
+                        </div>
+                      );
+                    },
+                    onClose: () => {
+                      CloseModal(modalID);
+                    },
+                  });
                 }}
               >
-                页面动作
+                查看所有属性项
+              </Button> */}
+              {/* <Button
+                className="mr-2"
+                color="default"
+                onClick={(e) => {
+                  genPageCode().then((res) => {
+                    const pageCode = res?.pageCode || "// 获取生成代码失败";
+                    platformCtx.selector.openLowCodeEditor({
+                      defaultValue: {
+                        code: pageCode,
+                      },
+                      onSubmit: () => {},
+                      eventType: "",
+                    });
+                  });
+                }}
+              >
+                查看页面源代码
+              </Button> */}
+              {/* <Button
+                className="mr-2"
+                color="default"
+                onClick={(e) => {
+                  ShowModal({
+                    title: "页面 DSL",
+                    children: () => {
+                      return <JSONDisplayer jsonData={appDescData} />;
+                    },
+                  });
+                }}
+              >
+                查看页面描述
               </Button> */}
               <Button
                 className="mr10"

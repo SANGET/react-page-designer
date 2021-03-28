@@ -100,8 +100,9 @@ export const createPlatformCtx = (
         };
       },
       openLowCodeEditor: (options) => {
-        const { defaultValue, onSubmit, ...other } = options;
+        const { defaultValue, onSubmit, modalSetting = {}, ...other } = options;
         const modalID = ShowModal({
+          ...modalSetting,
           title: "低代编辑器",
           width: "60%",
           children: () => {

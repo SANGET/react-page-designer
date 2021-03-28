@@ -643,12 +643,14 @@ class PageDesignerApp extends React.Component<
             >
               <div className="comp-panel">
                 <WidgetPanel
+                  appLocation={appLocation}
+                  getPageContent={this.getPageContent}
                   layoutNodeInfo={layoutInfo}
                   onUpdateApiConfig={this.onUpdateApiConfig}
                   pageMetadata={pageMetadata}
                 />
               </div>
-              <div className="canvas-container" style={{ height: "100%" }}>
+              <div className="canvas-container p-4" style={{ height: "100%" }}>
                 {!appContext.ready ? (
                   <LoadingTip />
                 ) : (

@@ -9,7 +9,7 @@
   "scripts": {
     "start": "yarn && cd ./packages/AppEntry && yarn start",
     "lerna:bootstrap": "lerna bootstrap",
-    "build": "sh ./scripts/build-provider-app.sh",
+    "build": "cd ./packages/AppEntry && yarn build",
     "build:docker": "sh ./scripts/build-provider-docker.sh",
     "rebuild:externals": "rm -rf ./packages/AppEntry/public/externals-libs && cd ./packages/AppEntry && npm run build:externals",
     "analyz": "cd ./packages/provider-app-entry && npm run analyz",
@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.20",
+    "react-tippy": "^1.4.0",
     "shortid": "^2.2.16"
   },
   "devDependencies": {

@@ -87,6 +87,7 @@ export interface OpenPDPropertiesEditorOptions {
 export interface OpenLowCodeEditorOptions {
   /** 提交 */
   onSubmit: (submitCtx: LowCodeSubmitOptions) => void
+  modalSetting: {}
   /** 默认值 */
   defaultValue: {
     code: string

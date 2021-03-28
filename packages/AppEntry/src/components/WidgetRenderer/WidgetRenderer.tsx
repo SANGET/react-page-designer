@@ -10,7 +10,7 @@ export interface PDWidgetRendererProps {
 
 export const getWidgetComp = (widgetRef) => {
   const WidgetFormRemote =
-    localWidgetRef[widgetRef] || window.HYCPC?.[widgetRef];
+    localWidgetRef[widgetRef] || window.PlatformComponents?.[widgetRef];
   return WidgetFormRemote;
 };
 
@@ -27,7 +27,7 @@ export const WidgetRenderer: React.FC<PDWidgetRendererProps> = (props) => {
   let Com;
   // 把组件属性初始值null转为 ""
   const newEntityState = {};
-  Object.keys(entityState).forEach((key)=>{
+  Object.keys(entityState).forEach((key) => {
     newEntityState[key] = entityState[key] || undefined;
   });
   if (!WidgetFormRemote) {

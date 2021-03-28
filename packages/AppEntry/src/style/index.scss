@@ -1,3 +1,7 @@
+:root {
+  --theme-color: #488cf0;
+}
+
 @import "@provider-app/page-visual-editor-engine/style/var.scss";
 // 覆盖可视化编辑器引擎提供的变量
 @import "./var.scss";
