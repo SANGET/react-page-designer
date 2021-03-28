@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/select-options-helper",
+  "description": "下拉数据源",
+  "version": "0.0.1",
+  "author": "SANGET",
+  "license": "MIT",
+  "dependencies": {}
+}

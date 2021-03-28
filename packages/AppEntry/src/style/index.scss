@@ -1,0 +1,8 @@
+@import "@provider-app/page-visual-editor-engine/style/var.scss";
+// 覆盖可视化编辑器引擎提供的变量
+@import "./var.scss";
+
+// 覆盖可视化编辑器引擎的样式
+@import "@provider-app/page-visual-editor-engine/style/index.scss";
+@import "./style.scss";
+@import "./biz-modules/index.scss";

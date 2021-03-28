@@ -1,0 +1,112 @@
+{
+  "label": "表格",
+  "icon": "FiBarChart2",
+  "widgetRef": "NormalTable",
+  "group": "listDisplay",
+  "eventAttr": [
+    { "alias": "查询", "type": "onQuery" },
+    { "alias": "选中行", "type": "onRowSelect" },
+    { "alias": "双击行", "type": "onRowDbClick" },
+    { "alias": "单击行", "type": "onRowClick" },
+    { "alias": "行失焦", "type": "onRowBlur" }
+  ],
+  "varAttr": [
+    {
+      "alias": "当前页数",
+      "attr": "current",
+      "type": "number",
+      "editable": false
+    },
+    {
+      "alias": "每页显示行数",
+      "attr": "pageSize",
+      "type": "number",
+      "editable": false
+    },
+    {
+      "alias": "数据总数",
+      "attr": "total",
+      "type": "number",
+      "editable": false
+    },
+    {
+      "alias": "选中行数据列表",
+      "attr": "selectedRows",
+      "type": "array",
+      "editable": false
+    },
+    {
+      "alias": "选中行唯一标识列表",
+      "attr": "selectedRowKeys",
+      "type": "array",
+      "editable": false
+    },
+    {
+      "alias": "最新选中行数据",
+      "attr": "lastSelectedRow",
+      "type": "object",
+      "editable": false
+    }
+  ],
+  "propItemsRely": {
+    "propItemRefs": [
+      { "propID": "prop_widget_coding", "editAttr": ["widgetCode"] },
+      { "propID": "prop_table_ds_helper", "defaultValues": {} },
+      { "propID": "prop_table_btn_helper", "defaultValues": {} },
+      {
+        "propID": "prop_title_value",
+        "editAttr": ["title"],
+        "defaultValues": { "title": "表格" }
+      },
+      {
+        "propID": "prop_title_align",
+        "editAttr": ["titleAlign"],
+        "defaultValues": { "titleAlign": "left" }
+      },
+      {
+        "propID": "prop_table_speedy_config_helper"
+      },
+      {
+        "propID": "prop_page_size",
+        "editAttr": ["pagination"],
+        "defaultValues": { "pagination": { "pageSize": 10, "current": 1 } }
+      },
+      {
+        "propID": "prop_show_order_column",
+        "editAttr": ["showOrderColumn"],
+        "defaultValues": { "showOrderColumn": false }
+      },
+      {
+        "propID": "prop_word_wrap",
+        "editAttr": ["wordWrap"],
+        "defaultValues": { "wordWrap": false }
+      },
+      {
+        "propID": "prop_check_row",
+        "editAttr": ["rowSelection"],
+        "defaultValues": {
+          "rowSelection": {
+            "type": "no",
+            "checkedStyle": "checkCell"
+          }
+        }
+      },
+      { "propID": "prop_action_config", "editAttr": ["eventRef"] },
+      {
+        "propID": "prop_query_type",
+        "editAttr": ["queryType"],
+        "defaultValues": {
+          "queryType": { "typical": { "queryStyle": "asForm" } }
+        }
+      },
+      { "propID": "prop_action_config", "editAttr": ["eventRef"] },
+      {
+        "propID": "prop_query_type",
+        "editAttr": ["queryType"],
+        "defaultValues": {
+          "queryType": { "typical": { "queryStyle": "asForm" } }
+        }
+      }
+    ]
+  }
+}

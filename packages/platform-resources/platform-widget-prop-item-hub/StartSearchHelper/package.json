@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/start-search-helper",
+  "description": "启动搜索",
+  "version": "0.0.1",
+  "author": "VALE",
+  "license": "MIT",
+  "dependencies": {}
+}

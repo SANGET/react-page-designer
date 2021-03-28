@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/check-custom-rules-helper",
+  "description": "自定义规则",
+  "version": "0.0.1",
+  "author": "VALE",
+  "license": "MIT",
+  "dependencies": {}
+}

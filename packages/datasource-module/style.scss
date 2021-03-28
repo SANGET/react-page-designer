@@ -1,0 +1,9 @@
+$themeColor: #488cf0;
+
+.api-group {
+  .api-item {
+    &:hover {
+      border-color: $themeColor;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "label": "下拉选择器",
+  "icon": "FiCornerLeftDown",
+  "widgetRef": "DropdownSelector",
+  "group": "formInput",
+  "eventAttr": [
+    { "alias": "值选中事件", "type": "onChange" },
+    { "alias": "聚焦事件", "type": "onFocus" },
+    { "alias": "失焦事件", "type": "onBlur" },
+    { "alias": "鼠标移入事件", "type": "onMouseEnter" },
+    { "alias": "鼠标移除事件", "type": "onMouseLeave" }
+  ],
+  "varAttr": [
+    { "alias": "实际值", "attr": "realVal", "type": "string", "editable": true }
+  ],
+  "propItemsRely": {
+    "propItemRefs": [
+      { "propID": "prop_widget_coding" },
+      { "propID": "prop_datasource_selector" },
+      { "propID": "prop_style_title_color" },
+      {
+        "propID": "prop_title_value",
+        "defaultValues": { "title": "下拉选择" }
+      },
+      {
+        "propID": "prop_real_value",
+        "editAttr": ["realVal", "exp", "variable"]
+      },
+      { "propID": "prop_field" },
+      { "propID": "prop_options" },
+      { "propID": "prop_dropdown_multiple" },
+      { "propID": "prop_start_search" },
+      { "propID": "prop_check_fixed_rule", "editAttr": ["checkFixedRule"] },
+      { "propID": "prop_check_custom_rule", "editAttr": ["checkCustomRule"] },
+      {
+        "propID": "prop_check_error_tooltip",
+        "editAttr": ["checkErrorTooltip"]
+      },
+      { "propID": "prop_action_config", "editAttr": ["eventRef"] },
+      { "propID": "prop_prompt_info", "editAttr": ["placeholder"] },
+      { "propID": "prop_widget_type", "editAttr": ["widgetType"] },
+      { "propID": "prop_note_info", "editAttr": ["noteInfo"] }
+    ]
+  }
+}

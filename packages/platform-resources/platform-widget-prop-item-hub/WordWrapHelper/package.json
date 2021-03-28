@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/word-wrap-helper",
+  "description": "字段数据换行显示",
+  "version": "0.0.1",
+  "author": "LIJIA",
+  "license": "MIT",
+  "dependencies": {}
+}

@@ -1,0 +1,28 @@
+{
+  "widgetRef": "PageContainer",
+  "icon": "FiCopy",
+  "label": "页面",
+  "group": "container",
+  "dragable": false,
+  "isContainer": true,
+  "eventAttr": [
+    { "alias": "加载事件", "type": "onPageLoad" },
+    { "alias": "销毁事件(未实现)", "type": "onPageDestroy" },
+    { "alias": "窗口大小调整事件(未实现)", "type": "onPageResize" }
+  ],
+  "propItemsRely": {
+    "propItemRefs": [
+      {
+        "propID": "prop_title_value",
+        "editAttr": "title"
+      },
+      {
+        "propID": "prop_style",
+        "defaultValues": {
+          "height": 400
+        }
+      },
+      { "propID": "prop_action_config", "editAttr": ["eventRef"] }
+    ]
+  }
+}

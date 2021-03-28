@@ -1,0 +1,12 @@
+{
+  "name": "@provider-app/page-visual-editor-engine",
+  "version": "0.0.1",
+  "types": "index.d.ts",
+  "dependencies": {
+    "@mini-code/base-func": "1.1.0",
+    "react-dnd": "^11.1.3",
+    "react-dnd-html5-backend": "^11.1.3"
+  },
+  "author": "SANGET",
+  "license": "MIT"
+}

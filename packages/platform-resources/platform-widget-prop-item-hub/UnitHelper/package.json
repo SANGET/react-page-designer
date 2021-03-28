@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/unit-helper",
+  "description": "单位编辑",
+  "version": "0.0.1",
+  "author": "VALE",
+  "license": "MIT",
+  "dependencies": {}
+}

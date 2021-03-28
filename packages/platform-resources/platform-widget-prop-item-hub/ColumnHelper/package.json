@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/column-helper",
+  "description": "动作的编辑",
+  "version": "0.0.1",
+  "author": "SANGET",
+  "license": "MIT",
+  "dependencies": {}
+}

@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/datasource-helper",
+  "description": "数据源属性编辑",
+  "version": "0.0.1",
+  "author": "SANGET",
+  "license": "MIT",
+  "dependencies": {}
+}

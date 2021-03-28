@@ -1,0 +1,41 @@
+{
+  "id": "widget-Rate",
+  "icon": "FiStar",
+  "label": "评分组件",
+  "group": "formInput",
+  "widgetRef": "Rate",
+  "eventAttr": [{ "alias": "值改变事件", "type": "onChange" }],
+  "varAttr": [
+    { "alias": "实际值", "attr": "realVal", "type": "number", "editable": true }
+  ],
+  "propItemsRely": {
+    "propItemRefs": [
+      { "propID": "prop_widget_coding", "editAttr": ["widgetCode"] },
+      { "propID": "prop_style_title_color", "editAttr": ["labelColor"] },
+      {
+        "propID": "prop_title_value",
+        "editAttr": ["title"],
+        "defaultValues": { "title": "评分" }
+      },
+      {
+        "propID": "prop_real_value",
+        "editAttr": ["realVal", "exp", "variable"]
+      },
+      { "propID": "prop_widget_type", "editAttr": ["widgetType"] },
+      {
+        "propID": "rate-number-value",
+        "editAttr": ["count"],
+        "defaultValues": { "count": 5 }
+      },
+      { "propID": "prop_action_config", "editAttr": ["eventRef"] },
+      { "propID": "prop_check_fixed_rule", "editAttr": ["checkFixedRule"] },
+      { "propID": "prop_check_custom_rule", "editAttr": ["checkCustomRule"] },
+      {
+        "propID": "prop_check_error_tooltip",
+        "editAttr": ["checkErrorTooltip"]
+      },
+      { "propID": "prop_field", "editAttr": ["field"] },
+      { "propID": "prop_note_info", "editAttr": ["noteInfo"] }
+    ]
+  }
+}

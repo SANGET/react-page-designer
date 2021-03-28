@@ -1,0 +1,31 @@
+{
+  "type": "api",
+  "name": "用户表",
+  "desc": "用户表的元数据",
+  "resourcePath": "/user",
+  "resourceType": "query",
+  "condition": {},
+  "reqSchema": {
+    "username": {
+      "type": "string",
+      "required": true
+    },
+    "pagination": {
+      "size": "string",
+      "total": true
+    },
+    "age": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "resSchema": {
+    "username": {
+      "type": "array",
+      "child": {}
+    },
+    "age": {
+      "type": "number"
+    }
+  }
+}

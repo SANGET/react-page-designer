@@ -1,0 +1,55 @@
+{
+  "content": [
+    {
+      "label": "页面",
+      "widgetRef": "PageContainer",
+      "deletable": false,
+      "dragable": false,
+      "isContainer": true,
+      "eventAttr": [
+        { "alias": "加载事件", "type": "onPageLoad" },
+        { "alias": "销毁事件(未实现)", "type": "onPageDestroy" },
+        { "alias": "窗口大小调整事件(未实现)", "type": "onPageResize" }
+      ],
+      "varAttr": [],
+      "id": "PC",
+      "_state": "active",
+      "propState": {}
+    }
+  ],
+  "pageState": {
+    "eventRef": {}
+  },
+  "meta": {
+    "apisConfig": {},
+    "events": {},
+    "widgetCounter": 0,
+    "dataSource": {},
+    "pageInterface": {},
+    "linkage": {},
+    "schema": {},
+    "actions": {
+      "closePage": {
+        "actionConfig": {
+          "config": {},
+          "type": "closePage",
+          "label": "关闭页面"
+        },
+        "actionName": "关闭页面",
+        "id": "closePage",
+        "preCheck": "",
+        "triggerCondition": ""
+      }
+    },
+    "varRely": {
+      "var_pageInput_0_mode": {
+        "title": "页面模式",
+        "type": "pageInput",
+        "varType": "string",
+        "realVal": "insert",
+        "code": "var.page.mode"
+      }
+    },
+    "_rely": {}
+  }
+}

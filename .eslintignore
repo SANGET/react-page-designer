@@ -1,0 +1,11 @@
+__test__/
+node_modules/
+*.bak.*
+.bak/
+packages/_demo-doc-expression-editor-hub
+build
+dist
+demo/
+*.demo/
+demos/
+*.min*

@@ -1,0 +1,259 @@
+{
+  "content": [
+    {
+      "label": "页面",
+      "widgetRef": "PageContainer",
+      "deletable": false,
+      "dragable": false,
+      "isContainer": true,
+      "eventAttr": [],
+      "varAttr": [],
+      "id": "PageContainer",
+      "_state": "active",
+      "propState": {},
+      "body": [
+        {
+          "label": "文本框",
+          "icon": "FiEdit2",
+          "widgetRef": "FormInput",
+          "wGroupType": "formController",
+          "eventAttr": [
+            {
+              "alias": "值改变事件",
+              "type": "onChange"
+            },
+            {
+              "alias": "鼠标移入事件",
+              "type": "onMouseIn"
+            },
+            {
+              "alias": "鼠标移除事件",
+              "type": "onMouseOut"
+            },
+            {
+              "alias": "获取焦点事件",
+              "type": "onFocus"
+            },
+            {
+              "alias": "失去焦点事件",
+              "type": "onBlur"
+            }
+          ],
+          "varAttr": [
+            {
+              "alias": "实际值",
+              "attr": "realVal",
+              "type": "string"
+            }
+          ],
+          "id": "odaoetWt",
+          "_state": "active",
+          "propState": {
+            "field": "",
+            "widgetCode": "FormInput$0",
+            "labelColor": null,
+            "title": "文本框",
+            "addonAfter": null,
+            "realVal": null,
+            "exp": null,
+            "variable": null,
+            "checkFixedRule": null,
+            "checkCustomRule": null,
+            "checkErrorTooltip": null,
+            "eventRef": null,
+            "lowCode": null,
+            "codeConf": null,
+            "placeholder": null,
+            "widgetType": null,
+            "note": null,
+            "noteInfo": null
+          }
+        },
+        {
+          "widgetRef": "FormButton",
+          "icon": "FiFeather",
+          "label": "按钮",
+          "wGroupType": "formController",
+          "eventAttr": [
+            {
+              "alias": "单击事件",
+              "type": "onClick"
+            },
+            {
+              "alias": "双击事件",
+              "type": "onDbClick"
+            },
+            {
+              "alias": "鼠标移入事件",
+              "type": "onMouseIn"
+            },
+            {
+              "alias": "鼠标移除事件",
+              "type": "onMouseOut"
+            }
+          ],
+          "id": "WmteWdrd",
+          "_state": "active",
+          "propState": {
+            "field": null,
+            "widgetCode": "FormButton$0",
+            "title": "提交",
+            "eventRef": {
+              "onClick": ["event.WmteWdrd.onClick.7SrpWVNE"]
+            },
+            "lowCode": null,
+            "codeConf": null
+          }
+        },
+        {
+          "widgetRef": "FlexLayoutContainer",
+          "label": "布局容器",
+          "body": [
+            {
+              "widgetRef": "FlexLayout",
+              "icon": "FiLayout",
+              "dragable": false,
+              "isContainer": true,
+              "label": "Flex 布局",
+              "acceptChildStrategy": {
+                "strategy": "blackList",
+                "blackList": []
+              },
+              "id": "drmimppr",
+              "_state": "active",
+              "propState": {
+                "span": 24
+              }
+            },
+            {
+              "widgetRef": "FlexLayout",
+              "icon": "FiLayout",
+              "dragable": false,
+              "isContainer": true,
+              "label": "Flex 布局",
+              "acceptChildStrategy": {
+                "strategy": "blackList",
+                "blackList": []
+              },
+              "id": "adillpmr",
+              "_state": "active",
+              "propState": {
+                "span": 12
+              }
+            },
+            {
+              "widgetRef": "FlexLayout",
+              "icon": "FiLayout",
+              "dragable": false,
+              "isContainer": true,
+              "label": "布局",
+              "acceptChildStrategy": {
+                "strategy": "blackList",
+                "blackList": []
+              },
+              "id": "mfottgfe",
+              "_state": "active",
+              "propState": {
+                "span": 12
+              }
+            }
+          ],
+          "id": "tWWtiept",
+          "_state": "active",
+          "propState": {}
+        }
+      ]
+    }
+  ],
+  "id": "1367302456811335680",
+  "name": "dyy测试",
+  "pageState": {
+    "eventRef": {}
+  },
+  "pageID": "1367302456811335680",
+  "meta": {
+    "apisConfig": {
+      "ariteemg": {
+        "url": "http://localhost:3000/node-web/mock-api",
+        "name": "模拟 API",
+        "desc": "",
+        "id": "ariteemg"
+      }
+    },
+    "events": {
+      "event.oaetllld.onClick.Mp5E2vTH": {
+        "actList": ["mcarfloo"]
+      },
+      "event.WmteWdrd.onClick.7SrpWVNE": {
+        "actList": ["mcarfloo"]
+      }
+    },
+    "widgetCounter": 0,
+    "dataSource": {},
+    "pageInterface": {},
+    "linkage": {},
+    "schema": {},
+    "actions": {
+      "mcarfloo": {
+        "actionName": "提交数据",
+        "preCheck": "",
+        "actionConfig": {
+          "config": {
+            "apiConfig": {
+              "url": "http://localhost:3000/node-web/mock-api",
+              "name": "模拟 API",
+              "desc": "",
+              "id": "ariteemg"
+            },
+            "submitWholeForm": true,
+            "method": "POST",
+            "fields": [],
+            "undefined": "POST"
+          },
+          "type": "submit2api"
+        },
+        "triggerCondition": ""
+      }
+    },
+    "varRely": {
+      "var.odaoetWt": {
+        "type": "widget",
+        "widgetRef": "odaoetWt",
+        "varAttr": [
+          {
+            "alias": "实际值",
+            "attr": "realVal",
+            "type": "string"
+          }
+        ]
+      },
+      "var.WmteWdrd": {
+        "type": "widget",
+        "widgetRef": "WmteWdrd"
+      },
+      "var,graofdtt": {
+        "type": "widget",
+        "widgetRef": "graofdtt"
+      },
+      "var,pegtarfg": {
+        "type": "widget",
+        "widgetRef": "pegtarfg"
+      }
+    },
+    "_rely": {
+      "var.odaoetWt": ["odaoetWt"],
+      "ariteemg": [],
+      "var.gWdmWWog": ["gWdmWWog"],
+      "var.rdeWtmtg": ["rdeWtmtg"],
+      "var.rrtplrtd": ["rrtplrtd"],
+      "var.dgglfptf": ["dgglfptf"],
+      "var.ptlifggf": ["ptlifggf"],
+      "var.tapoimoa": ["tapoimoa"],
+      "var.eammWmto": ["eammWmto"],
+      "var.oaetllld": ["oaetllld"],
+      "var.WmteWdrd": ["WmteWdrd"],
+      "var,graofdtt": ["graofdtt"],
+      "var,pegtarfg": ["pegtarfg"]
+    }
+  }
+}

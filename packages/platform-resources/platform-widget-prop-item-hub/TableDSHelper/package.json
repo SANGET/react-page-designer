@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/table-datasource-helper",
+  "description": "表格数据源属性项",
+  "version": "0.0.1",
+  "author": "SANGET",
+  "license": "MIT",
+  "dependencies": {}
+}

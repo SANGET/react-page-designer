@@ -1,0 +1,8 @@
+{
+  "name": "@provider-app/access-resources",
+  "description": "接入配置端的资源，包含属性项、组件分组",
+  "version": "0.0.1",
+  "author": "SANGET",
+  "license": "MIT",
+  "dependencies": {}
+}

@@ -1,0 +1,2 @@
+export { LowCodeConfig } from "./LowCodeConfig";
+

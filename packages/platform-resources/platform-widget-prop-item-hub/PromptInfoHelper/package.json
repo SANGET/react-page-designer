@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/prompt-info-helper",
+  "description": "提示信息",
+  "version": "0.0.1",
+  "author": "VALE",
+  "license": "MIT",
+  "dependencies": {}
+}

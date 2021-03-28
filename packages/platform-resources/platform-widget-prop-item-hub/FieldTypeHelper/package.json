@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/field-type-helper",
+  "description": "字段类型",
+  "version": "0.0.1",
+  "author": "value",
+  "license": "MIT",
+  "dependencies": {}
+}

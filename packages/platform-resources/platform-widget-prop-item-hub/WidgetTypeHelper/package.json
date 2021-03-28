@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/widget-type-helper",
+  "description": "控件类型",
+  "version": "0.0.1",
+  "author": "VALE",
+  "license": "MIT",
+  "dependencies": {}
+}

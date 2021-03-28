@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/title-color-helper",
+  "description": "标题颜色属性编辑",
+  "version": "0.0.1",
+  "author": "SANGET",
+  "license": "MIT",
+  "dependencies": {}
+}

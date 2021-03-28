@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/value-helper",
+  "description": "值的属性编辑",
+  "version": "0.0.1",
+  "author": "SANGET",
+  "license": "MIT",
+  "dependencies": {}
+}

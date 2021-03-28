@@ -1,0 +1,15 @@
+{
+  "name": "@provider-app/platform-access-spec",
+  "description": "平台接入标准接口，包含平台组件、属性项、平台上下文等接口的定义",
+  "version": "0.0.2",
+  "author": "SANGET",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "scripts": {
+    "build": "npm run clean:build && tsc && npm run copy:files",
+    "copy:files": "node ./copy-files",
+    "clean:build": "rm -rf ./lib",
+    "release": "npm run build && npm publish ./lib"
+  },
+  "dependencies": {}
+}

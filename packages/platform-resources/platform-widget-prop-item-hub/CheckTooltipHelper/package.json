@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/check-tooltip-helper",
+  "description": "校验失败提示",
+  "version": "0.0.1",
+  "author": "VALE",
+  "license": "MIT",
+  "dependencies": {}
+}

@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/string-length-helper",
+  "description": "字符长度",
+  "version": "0.0.1",
+  "author": "VALE",
+  "license": "MIT",
+  "dependencies": {}
+}

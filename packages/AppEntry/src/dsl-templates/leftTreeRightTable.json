@@ -1,0 +1,1092 @@
+{
+  "content": [
+    {
+      "label": "页面",
+      "widgetRef": "PageContainer",
+      "deletable": false,
+      "dragable": false,
+      "isContainer": true,
+      "eventAttr": [
+        {
+          "alias": "加载事件",
+          "type": "onPageLoad"
+        },
+        {
+          "alias": "销毁事件(未实现)",
+          "type": "onPageDestroy"
+        },
+        {
+          "alias": "窗口大小调整事件(未实现)",
+          "type": "onPageResize"
+        }
+      ],
+      "varAttr": [],
+      "id": "PC",
+      "_state": "active",
+      "propState": {},
+      "body": [
+        {
+          "widgetRef": "FlexLayoutContainer",
+          "body": [
+            {
+              "widgetRef": "FlexLayout",
+              "icon": "FiLayout",
+              "dragable": false,
+              "isContainer": true,
+              "label": "Flex 布局",
+              "acceptChildStrategy": {
+                "strategy": "blackList",
+                "blackList": []
+              },
+              "id": "femlotWl",
+              "_state": "active",
+              "propState": {
+                "span": "8"
+              },
+              "body": [
+                {
+                  "widgetRef": "PageContainer",
+                  "icon": "FiCopy",
+                  "label": "页面",
+                  "group": "container",
+                  "dragable": false,
+                  "isContainer": true,
+                  "eventAttr": [
+                    {
+                      "alias": "加载事件",
+                      "type": "onPageLoad"
+                    },
+                    {
+                      "alias": "销毁事件(未实现)",
+                      "type": "onPageDestroy"
+                    },
+                    {
+                      "alias": "窗口大小调整事件(未实现)",
+                      "type": "onPageResize"
+                    }
+                  ],
+                  "id": "dtftpdai",
+                  "_state": "active",
+                  "propState": {
+                    "title": "这个一棵树",
+                    "field": null,
+                    "style": null,
+                    "eventRef": null,
+                    "lowCode": null,
+                    "codeConf": null
+                  }
+                }
+              ]
+            },
+            {
+              "widgetRef": "FlexLayout",
+              "icon": "FiLayout",
+              "dragable": false,
+              "isContainer": true,
+              "label": "Flex 布局",
+              "acceptChildStrategy": {
+                "strategy": "blackList",
+                "blackList": []
+              },
+              "id": "imliotll",
+              "_state": "active",
+              "propState": {
+                "span": "16"
+              },
+              "body": [
+                {
+                  "widgetRef": "FlexLayoutContainer",
+                  "body": [
+                    {
+                      "widgetRef": "FlexLayout",
+                      "icon": "FiLayout",
+                      "dragable": false,
+                      "isContainer": true,
+                      "label": "Flex 布局",
+                      "acceptChildStrategy": {
+                        "strategy": "blackList",
+                        "blackList": []
+                      },
+                      "id": "iilepitp",
+                      "_state": "active",
+                      "propState": {
+                        "span": 12,
+                        "style": {
+                          "padding": "0 20px 0 0"
+                        }
+                      },
+                      "body": [
+                        {
+                          "label": "文本框",
+                          "icon": "FiEdit2",
+                          "widgetRef": "FormInput",
+                          "group": "formInput",
+                          "eventAttr": [
+                            {
+                              "alias": "值改变事件",
+                              "type": "onChange"
+                            },
+                            {
+                              "alias": "鼠标移入事件",
+                              "type": "onMouseIn"
+                            },
+                            {
+                              "alias": "鼠标移出事件",
+                              "type": "onMouseOut"
+                            },
+                            {
+                              "alias": "获取焦点事件",
+                              "type": "onFocus"
+                            },
+                            {
+                              "alias": "失去焦点事件",
+                              "type": "onBlur"
+                            }
+                          ],
+                          "varAttr": [
+                            {
+                              "alias": "实际值",
+                              "attr": "realVal",
+                              "type": "string",
+                              "editable": true
+                            }
+                          ],
+                          "id": "eegadtid",
+                          "_state": "active",
+                          "propState": {
+                            "field": null,
+                            "widgetCode": "FormInput$0",
+                            "labelColor": null,
+                            "title": "姓名",
+                            "addonAfter": null,
+                            "realVal": null,
+                            "exp": null,
+                            "variable": null,
+                            "checkFixedRule": null,
+                            "checkCustomRule": null,
+                            "checkErrorTooltip": null,
+                            "eventRef": null,
+                            "lowCode": null,
+                            "codeConf": null,
+                            "placeholder": null,
+                            "widgetType": null,
+                            "note": null,
+                            "noteInfo": null
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "widgetRef": "FlexLayout",
+                      "icon": "FiLayout",
+                      "dragable": false,
+                      "isContainer": true,
+                      "label": "Flex 布局",
+                      "acceptChildStrategy": {
+                        "strategy": "blackList",
+                        "blackList": []
+                      },
+                      "id": "ttmitodl",
+                      "_state": "active",
+                      "propState": {
+                        "span": 12
+                      },
+                      "body": [
+                        {
+                          "label": "数字框",
+                          "icon": "FiEdit3",
+                          "widgetRef": "FormInputNumber",
+                          "group": "formInput",
+                          "eventAttr": [
+                            {
+                              "alias": "值改变事件",
+                              "type": "onChange"
+                            },
+                            {
+                              "alias": "鼠标移入事件",
+                              "type": "onMouseIn"
+                            },
+                            {
+                              "alias": "鼠标移除事件",
+                              "type": "onMouseOut"
+                            }
+                          ],
+                          "varAttr": [
+                            {
+                              "alias": "实际值",
+                              "attr": "realVal",
+                              "type": "number",
+                              "editable": true
+                            }
+                          ],
+                          "id": "prWroepi",
+                          "_state": "active",
+                          "propState": {
+                            "title": "年龄",
+                            "field": null,
+                            "addonAfter": null,
+                            "widgetCode": "FormInputNumber$0",
+                            "widgetType": null,
+                            "fieldType": null,
+                            "dataType": null,
+                            "stringLength": null,
+                            "placeholder": null,
+                            "note": null,
+                            "noteInfo": null,
+                            "max": null,
+                            "min": null,
+                            "precision": null,
+                            "checkFixedRule": null,
+                            "checkCustomRule": null,
+                            "checkErrorTooltip": null,
+                            "realVal": null,
+                            "exp": null,
+                            "variable": null,
+                            "eventRef": null,
+                            "lowCode": null,
+                            "codeConf": null
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "id": "ppaaittt",
+                  "_state": "active",
+                  "propState": {
+                    "style": {
+                      "padding": "",
+                      "margin": "",
+                      "border": ""
+                    }
+                  }
+                },
+                {
+                  "label": "表格",
+                  "icon": "FiBarChart2",
+                  "widgetRef": "NormalTable",
+                  "group": "listDisplay",
+                  "eventAttr": [
+                    {
+                      "alias": "查询",
+                      "type": "onQuery"
+                    },
+                    {
+                      "alias": "选中行",
+                      "type": "onRowSelect"
+                    },
+                    {
+                      "alias": "双击行",
+                      "type": "onRowDbClick"
+                    },
+                    {
+                      "alias": "单击行",
+                      "type": "onRowClick"
+                    },
+                    {
+                      "alias": "行失焦",
+                      "type": "onRowBlur"
+                    }
+                  ],
+                  "varAttr": [
+                    {
+                      "alias": "当前页数",
+                      "attr": "current",
+                      "type": "number",
+                      "editable": false
+                    },
+                    {
+                      "alias": "每页显示行数",
+                      "attr": "pageSize",
+                      "type": "number",
+                      "editable": false
+                    },
+                    {
+                      "alias": "数据总数",
+                      "attr": "total",
+                      "type": "number",
+                      "editable": false
+                    },
+                    {
+                      "alias": "选中行数据列表",
+                      "attr": "selectedRows",
+                      "type": "array",
+                      "editable": false
+                    },
+                    {
+                      "alias": "选中行唯一标识列表",
+                      "attr": "selectedRowKeys",
+                      "type": "array",
+                      "editable": false
+                    },
+                    {
+                      "alias": "最新选中行数据",
+                      "attr": "lastSelectedRow",
+                      "type": "object",
+                      "editable": false
+                    }
+                  ],
+                  "id": "egogmtgt",
+                  "_state": "active",
+                  "propState": {
+                    "field": null,
+                    "widgetCode": "NormalTable$0",
+                    "ds": [
+                      "ds,1367293245096341504"
+                    ],
+                    "columns": [
+                      {
+                        "title": "姓名",
+                        "dsID": "1367293245096341504",
+                        "fieldID": "1367293411220140033",
+                        "id": "xingming",
+                        "dataIndex": "xingming",
+                        "width": "150px",
+                        "type": "dsColumn",
+                        "align": "left",
+                        "editable": false,
+                        "fieldShowType": "realVal",
+                        "show": true
+                      },
+                      {
+                        "title": "性别",
+                        "dsID": "1367293245096341504",
+                        "fieldID": "1374891308140867585",
+                        "id": "xingbie",
+                        "dataIndex": "xingbie",
+                        "width": "150px",
+                        "type": "dsColumn",
+                        "align": "left",
+                        "editable": false,
+                        "fieldShowType": "showVal",
+                        "show": true
+                      },
+                      {
+                        "title": "年龄",
+                        "dsID": "1367293245096341504",
+                        "fieldID": "1367293411220140038",
+                        "id": "nianling",
+                        "dataIndex": "nianling",
+                        "width": "150px",
+                        "type": "dsColumn",
+                        "align": "left",
+                        "editable": false,
+                        "fieldShowType": "realVal",
+                        "show": true
+                      }
+                    ],
+                    "rangeList": [
+                      {
+                        "field": "xingming",
+                        "id": "amaeortt",
+                        "exp": "",
+                        "realVal": "",
+                        "variable": "eegadtid_realVal",
+                        "variableConfig": {
+                          "code": "FormInput$0.realVal",
+                          "varType": "string",
+                          "type": "widget",
+                          "title": "实际值",
+                          "wholeTitle": "姓名_实际值",
+                          "id": "eegadtid_realVal",
+                          "key": "eegadtid_realVal",
+                          "pid": "eegadtid",
+                          "editable": true,
+                          "label": "实际值",
+                          "value": "eegadtid_realVal"
+                        }
+                      },
+                      {
+                        "field": "nianling",
+                        "id": "tgWitagf",
+                        "exp": "",
+                        "realVal": "",
+                        "variable": "prWroepi_realVal",
+                        "variableConfig": {
+                          "code": "FormInputNumber$0.realVal",
+                          "varType": "number",
+                          "type": "widget",
+                          "title": "实际值",
+                          "wholeTitle": "年龄_实际值",
+                          "id": "prWroepi_realVal",
+                          "key": "prWroepi_realVal",
+                          "pid": "prWroepi",
+                          "editable": true,
+                          "label": "实际值",
+                          "value": "prWroepi_realVal"
+                        }
+                      }
+                    ],
+                    "headerBtns": [
+                      {
+                        "widgetRef": "FormButton",
+                        "icon": "FiFeather",
+                        "label": "按钮",
+                        "group": "actionControl",
+                        "eventAttr": [
+                          {
+                            "alias": "单击事件",
+                            "type": "onClick"
+                          },
+                          {
+                            "alias": "双击事件",
+                            "type": "onDbClick"
+                          },
+                          {
+                            "alias": "鼠标移入事件",
+                            "type": "onMouseIn"
+                          },
+                          {
+                            "alias": "鼠标移出事件",
+                            "type": "onMouseOut"
+                          }
+                        ],
+                        "id": "lgfWdret",
+                        "_state": "active",
+                        "propState": {
+                          "field": null,
+                          "widgetCode": "FormButton$0",
+                          "title": "新增",
+                          "eventRef": {
+                            "onClick": [
+                              "event,lgfWdret,onClick,69rizee1"
+                            ]
+                          },
+                          "lowCode": null,
+                          "codeConf": null
+                        },
+                        "type": "create",
+                        "title": "新增"
+                      },
+                      {
+                        "widgetRef": "FormButton",
+                        "icon": "FiFeather",
+                        "label": "按钮",
+                        "group": "actionControl",
+                        "eventAttr": [
+                          {
+                            "alias": "单击事件",
+                            "type": "onClick"
+                          },
+                          {
+                            "alias": "双击事件",
+                            "type": "onDbClick"
+                          },
+                          {
+                            "alias": "鼠标移入事件",
+                            "type": "onMouseIn"
+                          },
+                          {
+                            "alias": "鼠标移出事件",
+                            "type": "onMouseOut"
+                          }
+                        ],
+                        "id": "pafpWitW",
+                        "_state": "active",
+                        "propState": {
+                          "field": null,
+                          "widgetCode": "FormButton$0",
+                          "title": "修改",
+                          "eventRef": {
+                            "onClick": [
+                              "event,pafpWitW,onClick,RLUWpHFz"
+                            ]
+                          },
+                          "lowCode": null,
+                          "codeConf": null
+                        },
+                        "type": "update",
+                        "title": "修改"
+                      },
+                      {
+                        "widgetRef": "FormButton",
+                        "icon": "FiFeather",
+                        "label": "按钮",
+                        "group": "actionControl",
+                        "eventAttr": [
+                          {
+                            "alias": "单击事件",
+                            "type": "onClick"
+                          },
+                          {
+                            "alias": "双击事件",
+                            "type": "onDbClick"
+                          },
+                          {
+                            "alias": "鼠标移入事件",
+                            "type": "onMouseIn"
+                          },
+                          {
+                            "alias": "鼠标移出事件",
+                            "type": "onMouseOut"
+                          }
+                        ],
+                        "id": "oloWtmal",
+                        "_state": "active",
+                        "propState": {
+                          "field": null,
+                          "widgetCode": "FormButton$0",
+                          "title": "删除",
+                          "eventRef": {
+                            "onClick": [
+                              "event,oloWtmal,onClick,RThZfmpP"
+                            ]
+                          },
+                          "lowCode": null,
+                          "codeConf": null
+                        },
+                        "type": "delete",
+                        "title": "删除"
+                      }
+                    ],
+                    "inlineBtns": [
+                      {
+                        "widgetRef": "FormButton",
+                        "icon": "FiFeather",
+                        "label": "按钮",
+                        "group": "actionControl",
+                        "eventAttr": [
+                          {
+                            "alias": "单击事件",
+                            "type": "onClick"
+                          },
+                          {
+                            "alias": "双击事件",
+                            "type": "onDbClick"
+                          },
+                          {
+                            "alias": "鼠标移入事件",
+                            "type": "onMouseIn"
+                          },
+                          {
+                            "alias": "鼠标移出事件",
+                            "type": "onMouseOut"
+                          }
+                        ],
+                        "id": "aWteilet",
+                        "_state": "active",
+                        "propState": {
+                          "field": null,
+                          "widgetCode": "FormButton$0",
+                          "title": "修改",
+                          "eventRef": {
+                            "onClick": [
+                              "event,aWteilet,onClick,G4sKfyzj"
+                            ]
+                          },
+                          "lowCode": null,
+                          "codeConf": null
+                        },
+                        "type": "update",
+                        "title": "修改"
+                      },
+                      {
+                        "widgetRef": "FormButton",
+                        "icon": "FiFeather",
+                        "label": "按钮",
+                        "group": "actionControl",
+                        "eventAttr": [
+                          {
+                            "alias": "单击事件",
+                            "type": "onClick"
+                          },
+                          {
+                            "alias": "双击事件",
+                            "type": "onDbClick"
+                          },
+                          {
+                            "alias": "鼠标移入事件",
+                            "type": "onMouseIn"
+                          },
+                          {
+                            "alias": "鼠标移出事件",
+                            "type": "onMouseOut"
+                          }
+                        ],
+                        "id": "tififrde",
+                        "_state": "active",
+                        "propState": {
+                          "field": null,
+                          "widgetCode": "FormButton$0",
+                          "title": "删除",
+                          "eventRef": {
+                            "onClick": [
+                              "event,tififrde,onClick,7hjzw4Ew"
+                            ]
+                          },
+                          "lowCode": null,
+                          "codeConf": null
+                        },
+                        "type": "delete",
+                        "title": "删除"
+                      }
+                    ],
+                    "title": "表格",
+                    "titleAlign": "left",
+                    "typicalQueryList": null,
+                    "specialQueryList": null,
+                    "keywordQueryList": null,
+                    "pagination": {
+                      "pageSize": 10,
+                      "current": 1
+                    },
+                    "showOrderColumn": false,
+                    "wordWrap": false,
+                    "rowSelection": {
+                      "type": "no",
+                      "checkedStyle": "checkCell"
+                    },
+                    "eventRef": null,
+                    "lowCode": null,
+                    "codeConf": null,
+                    "queryType": {
+                      "typical": {
+                        "queryStyle": "asForm"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "id": "gigeefra",
+          "_state": "active",
+          "propState": {}
+        }
+      ]
+    }
+  ],
+  "id": "1374892594038976512",
+  "name": "表格左树右表模板",
+  "pageState": {
+    "eventRef": {}
+  },
+  "pageID": "1374892594038976512",
+  "meta": {
+    "apisConfig": {},
+    "events": {
+      "event,lgfWdret,onClick,69rizee1": {
+        "actList": [
+          "itpolrlA"
+        ]
+      },
+      "event,pafpWitW,onClick,RLUWpHFz": {
+        "actList": [
+          "tmrioill"
+        ]
+      },
+      "event,oloWtmal,onClick,RThZfmpP": {
+        "actList": [
+          "pttcAlfp"
+        ]
+      },
+      "event,aWteilet,onClick,G4sKfyzj": {
+        "actList": [
+          "tmrioill"
+        ]
+      },
+      "event,tififrde,onClick,7hjzw4Ew": {
+        "actList": [
+          "pttcAlfp"
+        ]
+      }
+    },
+    "widgetCounter": 0,
+    "dataSource": {
+      "ds,1367293245096341504": {
+        "name": "人员表",
+        "id": "1367293245096341504",
+        "moduleId": "1357574780575952896",
+        "code": "renyuanbiao",
+        "auxTable": {
+          "containAuxTable": true
+        },
+        "tableType": "TABLE",
+        "columns": {
+          "1367293245142478849": {
+            "id": "1367293245142478849",
+            "name": "创建人主键",
+            "colDataType": "NORMAL",
+            "fieldSize": 20,
+            "fieldType": "INT",
+            "fieldCode": "create_user_id",
+            "species": "SYS_TMPL",
+            "dsID": "1367293245096341504"
+          },
+          "1374891308140867585": {
+            "id": "1374891308140867585",
+            "name": "性别",
+            "colDataType": "DICT",
+            "fieldSize": 32,
+            "fieldType": "STRING",
+            "fieldCode": "xingbie",
+            "species": "BIS",
+            "dsID": "1367293245096341504"
+          },
+          "1367293245146673159": {
+            "id": "1367293245146673159",
+            "name": "创建时间",
+            "colDataType": "NORMAL",
+            "fieldSize": 0,
+            "fieldType": "DATE_TIME",
+            "fieldCode": "create_time",
+            "species": "SYS_TMPL",
+            "dsID": "1367293245096341504"
+          },
+          "1367293245146673158": {
+            "id": "1367293245146673158",
+            "name": "创建人名称",
+            "colDataType": "NORMAL",
+            "fieldSize": 32,
+            "fieldType": "STRING",
+            "fieldCode": "create_user_name",
+            "species": "SYS_TMPL",
+            "dsID": "1367293245096341504"
+          },
+          "1367293245146673161": {
+            "id": "1367293245146673161",
+            "name": "数据版本",
+            "colDataType": "NORMAL",
+            "fieldSize": 32,
+            "fieldType": "STRING",
+            "fieldCode": "data_version",
+            "species": "SYS_TMPL",
+            "dsID": "1367293245096341504"
+          },
+          "1367293411220140038": {
+            "id": "1367293411220140038",
+            "name": "年龄",
+            "colDataType": "NORMAL",
+            "fieldSize": 8,
+            "fieldType": "INT",
+            "fieldCode": "nianling",
+            "species": "BIS",
+            "dsID": "1367293245096341504"
+          },
+          "1367293245146673166": {
+            "id": "1367293245146673166",
+            "name": "最后修改人主键",
+            "colDataType": "NORMAL",
+            "fieldSize": 20,
+            "fieldType": "INT",
+            "fieldCode": "last_update_user_id",
+            "species": "SYS_TMPL",
+            "dsID": "1367293245096341504"
+          },
+          "1367293411220140033": {
+            "id": "1367293411220140033",
+            "name": "姓名",
+            "colDataType": "NORMAL",
+            "fieldSize": 32,
+            "fieldType": "STRING",
+            "fieldCode": "xingming",
+            "species": "BIS",
+            "dsID": "1367293245096341504"
+          },
+          "1367293245146673153": {
+            "id": "1367293245146673153",
+            "name": "最后修改时间",
+            "colDataType": "NORMAL",
+            "fieldSize": 0,
+            "fieldType": "DATE_TIME",
+            "fieldCode": "last_update_time",
+            "species": "SYS_TMPL",
+            "dsID": "1367293245096341504"
+          },
+          "1367293245146673155": {
+            "id": "1367293245146673155",
+            "name": "排序序号",
+            "colDataType": "NORMAL",
+            "fieldSize": 8,
+            "fieldType": "INT",
+            "fieldCode": "sequence",
+            "species": "SYS_TMPL",
+            "dsID": "1367293245096341504"
+          },
+          "1374891308140867591": {
+            "id": "1374891308140867591",
+            "name": "日期",
+            "colDataType": "NORMAL",
+            "fieldSize": 0,
+            "fieldType": "DATE",
+            "fieldCode": "riqi",
+            "species": "BIS",
+            "dsID": "1367293245096341504"
+          },
+          "1367293245146673163": {
+            "id": "1367293245146673163",
+            "name": "主键",
+            "colDataType": "PK",
+            "fieldSize": 20,
+            "fieldType": "INT",
+            "fieldCode": "id",
+            "species": "SYS",
+            "dsID": "1367293245096341504"
+          },
+          "1367293245146673168": {
+            "id": "1367293245146673168",
+            "name": "最后修改人名称",
+            "colDataType": "NORMAL",
+            "fieldSize": 32,
+            "fieldType": "STRING",
+            "fieldCode": "last_update_user_name",
+            "species": "SYS_TMPL",
+            "dsID": "1367293245096341504"
+          }
+        },
+        "type": "TABLE",
+        "createdBy": [
+          "prop"
+        ]
+      }
+    },
+    "pageInterface": {},
+    "linkage": {},
+    "schema": {},
+    "actions": {
+      "closePage": {
+        "actionConfig": {
+          "config": {},
+          "type": "closePage",
+          "label": "关闭页面"
+        },
+        "actionName": "关闭页面",
+        "id": "closePage",
+        "preCheck": "",
+        "triggerCondition": ""
+      },
+      "itpolrlA": {
+        "actionName": "打开新增链接",
+        "preCheck": "",
+        "actionConfig": {
+          "config": {
+            "openType": "openModal",
+            "pageArea": "pageInApp",
+            "link": "1374891388604395520",
+            "paramMatch": {
+              "var_pageInput_1_LcAQQYi3": {
+                "exp": "",
+                "realVal": "",
+                "variable": "egogmtgt_lastSelectedRow.id",
+                "variableConfig": {
+                  "code": "NormalTable$0.lastSelectedRow.id",
+                  "title": "主键",
+                  "wholeTitle": "表格_最新选中行数据_主键",
+                  "editable": false,
+                  "id": "egogmtgt_lastSelectedRow.id",
+                  "pid": "egogmtgt_lastSelectedRow",
+                  "type": "widget",
+                  "key": "egogmtgt_lastSelectedRow.id",
+                  "label": "主键",
+                  "value": "egogmtgt_lastSelectedRow.id"
+                }
+              },
+              "var_pageInput_0_mode": {
+                "exp": "",
+                "realVal": "insert",
+                "variable": ""
+              }
+            },
+            "pageNameCn": "表单模板"
+          },
+          "type": "openPage",
+          "label": "打开链接"
+        },
+        "triggerCondition": ""
+      },
+      "tmrioill": {
+        "actionName": "修改打开页面",
+        "preCheck": "",
+        "actionConfig": {
+          "config": {
+            "openType": "openModal",
+            "pageArea": "pageInApp",
+            "link": "1374891388604395520",
+            "paramMatch": {
+              "var_pageInput_0_mode": {
+                "exp": "",
+                "realVal": "update",
+                "variable": ""
+              },
+              "var_pageInput_1_LcAQQYi3": {
+                "exp": "",
+                "realVal": "",
+                "variable": "egogmtgt_lastSelectedRow.id",
+                "variableConfig": {
+                  "code": "NormalTable$0.lastSelectedRow.id",
+                  "title": "主键",
+                  "wholeTitle": "表格_最新选中行数据_主键",
+                  "editable": false,
+                  "id": "egogmtgt_lastSelectedRow.id",
+                  "pid": "egogmtgt_lastSelectedRow",
+                  "type": "widget",
+                  "key": "egogmtgt_lastSelectedRow.id",
+                  "label": "主键",
+                  "value": "egogmtgt_lastSelectedRow.id"
+                }
+              }
+            },
+            "pageNameCn": "表单模板"
+          },
+          "type": "openPage",
+          "label": "打开链接"
+        },
+        "triggerCondition": ""
+      },
+      "pttcAlfp": {
+        "actionName": "删除",
+        "preCheck": "",
+        "actionConfig": {
+          "config": {
+            "api": "ds,1367293245096341504",
+            "submitType": "submitWholeForm",
+            "method": {
+              "exp": "",
+              "realVal": "delete",
+              "variable": ""
+            },
+            "fieldList": [
+              {
+                "field": "",
+                "realVal": "",
+                "exp": "",
+                "variable": "",
+                "id": "dpdWtggi"
+              }
+            ],
+            "rangeList": [
+              {
+                "field": "id",
+                "realVal": "",
+                "exp": "",
+                "variable": "egogmtgt_lastSelectedRow.id",
+                "id": "dfmldlil",
+                "variableConfig": {
+                  "code": "NormalTable$0.lastSelectedRow.id",
+                  "title": "主键",
+                  "wholeTitle": "表格_最新选中行数据_主键",
+                  "editable": false,
+                  "id": "egogmtgt_lastSelectedRow.id",
+                  "pid": "egogmtgt_lastSelectedRow",
+                  "type": "widget",
+                  "key": "egogmtgt_lastSelectedRow.id",
+                  "label": "主键",
+                  "value": "egogmtgt_lastSelectedRow.id"
+                }
+              }
+            ]
+          },
+          "type": "submit2api",
+          "label": "提交数据到 API"
+        },
+        "triggerCondition": ""
+      }
+    },
+    "varRely": {
+      "var_pageInput_0_mode": {
+        "title": "页面模式",
+        "type": "pageInput",
+        "varType": "string",
+        "realVal": "insert",
+        "code": "var.page.mode"
+      },
+      "var,gigeefra": {
+        "type": "widget",
+        "widgetRef": "gigeefra"
+      },
+      "var,dtftpdai": {
+        "type": "widget",
+        "widgetRef": "dtftpdai"
+      },
+      "var,egogmtgt": {
+        "type": "widget",
+        "widgetRef": "egogmtgt",
+        "varAttr": [
+          {
+            "alias": "当前页数",
+            "attr": "current",
+            "type": "number",
+            "editable": false
+          },
+          {
+            "alias": "每页显示行数",
+            "attr": "pageSize",
+            "type": "number",
+            "editable": false
+          },
+          {
+            "alias": "数据总数",
+            "attr": "total",
+            "type": "number",
+            "editable": false
+          },
+          {
+            "alias": "选中行数据列表",
+            "attr": "selectedRows",
+            "type": "array",
+            "editable": false
+          },
+          {
+            "alias": "选中行唯一标识列表",
+            "attr": "selectedRowKeys",
+            "type": "array",
+            "editable": false
+          },
+          {
+            "alias": "最新选中行数据",
+            "attr": "lastSelectedRow",
+            "type": "object",
+            "editable": false
+          }
+        ]
+      },
+      "var,rrgeptpW": {
+        "type": "widget",
+        "widgetRef": "rrgeptpW"
+      },
+      "var,eegadtid": {
+        "type": "widget",
+        "widgetRef": "eegadtid",
+        "varAttr": [
+          {
+            "alias": "实际值",
+            "attr": "realVal",
+            "type": "string",
+            "editable": true
+          }
+        ]
+      },
+      "var,prWroepi": {
+        "type": "widget",
+        "widgetRef": "prWroepi",
+        "varAttr": [
+          {
+            "alias": "实际值",
+            "attr": "realVal",
+            "type": "number",
+            "editable": true
+          }
+        ]
+      }
+    },
+    "_rely": {
+      "var,gigeefra": [
+        "gigeefra"
+      ],
+      "var,dtftpdai": [
+        "dtftpdai"
+      ],
+      "var,egogmtgt": [
+        "egogmtgt"
+      ],
+      "var,rrgeptpW": [
+        "rrgeptpW"
+      ],
+      "var,eegadtid": [
+        "eegadtid"
+      ],
+      "var,prWroepi": [
+        "prWroepi"
+      ]
+    }
+  }
+}

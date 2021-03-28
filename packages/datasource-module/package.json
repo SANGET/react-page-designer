@@ -1,0 +1,7 @@
+{
+  "name": "@provider-app/datasource-module",
+  "description": "页面建模数据源",
+  "version": "0.0.1",
+  "private": true,
+  "author": "SANGET"
+}

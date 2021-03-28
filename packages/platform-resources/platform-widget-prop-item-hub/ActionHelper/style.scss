@@ -1,0 +1,30 @@
+.event-setting-panel {
+  max-height: calc( 100% - 50px );
+  overflow: auto;
+  .ant-collapse-content-box {
+    padding: 12px;
+    .event-list-panel {
+      .ant-collapse-item {
+        margin-bottom: 12px;
+      }
+      .ant-collapse-content, .ant-collapse-header {
+        background: #f7f7f7;
+        border-radius: 2px;
+        border: 0px;
+        overflow: hidden;
+      }
+      .ant-collapse-header {
+        padding: 5px 16px;
+        padding-left: 40px;
+      }
+      .ant-collapse-content {
+        .ant-collapse-content-box {
+          padding: 8px;
+          .ant-form-item {
+            margin-bottom: 8px;
+          }
+        }
+      }      
+    }
+  }
+}

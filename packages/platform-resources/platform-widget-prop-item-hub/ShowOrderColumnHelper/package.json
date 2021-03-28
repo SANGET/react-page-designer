@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/show-order-column-helper",
+  "description": "显示序列号",
+  "version": "0.0.1",
+  "author": "LIJIA",
+  "license": "MIT",
+  "dependencies": {}
+}

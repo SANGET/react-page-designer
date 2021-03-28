@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/dropdown-multiple-helper",
+  "description": "下拉多选",
+  "version": "0.0.1",
+  "author": "VALE",
+  "license": "MIT",
+  "dependencies": {}
+}

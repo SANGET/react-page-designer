@@ -1,0 +1,24 @@
+{
+  "widgetRef": "FormContainer",
+  "icon": "FiTablet",
+  "label": "表单",
+  "dragable": false,
+  "isContainer": true,
+  "eventAttr": [
+    { "alias": "加载事件", "type": "onPageLoad" },
+    { "alias": "提交", "type": "onSubmit" }
+  ],
+  "varAttr": [
+    { "alias": "初始值", "attr": "initialValues", "type": "object", "editable": true }
+  ],
+  "propItemsRely": {
+    "propItemRefs": [
+      { "propID": "prop_table_ds_helper", "defaultValues": {} },
+      {
+        "propID": "prop_title_value",
+        "editAttr": "title"
+      },
+      { "propID": "prop_action_config", "editAttr": ["eventRef"] }
+    ]
+  }
+}

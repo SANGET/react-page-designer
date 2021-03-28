@@ -1,0 +1,7 @@
+{
+  "name": "@provider-app/shared-ui",
+  "version": "0.0.1",
+  "description": "配置端共享的 UI",
+  "author": "SANGET",
+  "license": "MIT"
+}

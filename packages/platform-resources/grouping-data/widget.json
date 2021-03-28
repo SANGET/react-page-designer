@@ -1,0 +1,27 @@
+{
+  "title": "控件类型",
+  "type": "dragableItems",
+  "itemsGroups": [
+    { "title": "通用", "type": "", "items": ["FormButton"] },
+    {
+      "title": "表单控件",
+      "type": "",
+      "items": [
+        "FormInput",
+        "FormTimePicker",
+        "FormInputNumber",
+        "Checkbox",
+        "Radio",
+        "DropdownSelector",
+        "Textarea",
+        "Rate"
+      ]
+    },
+    { "title": "表格控件", "type": "", "items": ["NormalTable"] },
+    {
+      "title": "布局控件",
+      "type": "",
+      "items": ["FlexLayout", "PageContainer", "FormContainer"]
+    }
+  ]
+}

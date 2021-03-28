@@ -1,0 +1,708 @@
+{
+  "content": [
+    {
+      "label": "页面",
+      "widgetRef": "PageContainer",
+      "deletable": false,
+      "dragable": false,
+      "isContainer": true,
+      "eventAttr": [
+        {
+          "alias": "加载事件",
+          "type": "onPageLoad"
+        },
+        {
+          "alias": "销毁事件(未实现)",
+          "type": "onPageDestroy"
+        },
+        {
+          "alias": "窗口大小调整事件(未实现)",
+          "type": "onPageResize"
+        }
+      ],
+      "varAttr": [],
+      "id": "PC",
+      "_state": "active",
+      "propState": {
+        "eventRef": {
+          "onPageLoad": [
+            "event,PC,onPageLoad,VyIe240l"
+          ]
+        }
+      },
+      "body": [
+        {
+          "label": "文本框",
+          "icon": "FiEdit2",
+          "widgetRef": "FormInput",
+          "group": "formInput",
+          "eventAttr": [
+            {
+              "alias": "值改变事件",
+              "type": "onChange"
+            },
+            {
+              "alias": "鼠标移入事件",
+              "type": "onMouseIn"
+            },
+            {
+              "alias": "鼠标移出事件",
+              "type": "onMouseOut"
+            },
+            {
+              "alias": "获取焦点事件",
+              "type": "onFocus"
+            },
+            {
+              "alias": "失去焦点事件",
+              "type": "onBlur"
+            }
+          ],
+          "varAttr": [
+            {
+              "alias": "实际值",
+              "attr": "realVal",
+              "type": "string",
+              "editable": true
+            }
+          ],
+          "id": "oWrgpgtg",
+          "_state": "active",
+          "propState": {
+            "field": "xingming",
+            "widgetCode": "FormInput$0",
+            "labelColor": null,
+            "title": "姓名",
+            "addonAfter": null,
+            "realVal": null,
+            "exp": null,
+            "variable": null,
+            "checkFixedRule": null,
+            "checkCustomRule": null,
+            "checkErrorTooltip": null,
+            "eventRef": null,
+            "lowCode": null,
+            "codeConf": null,
+            "placeholder": null,
+            "widgetType": null,
+            "note": null,
+            "noteInfo": null
+          }
+        },
+        {
+          "label": "数字框",
+          "icon": "FiEdit3",
+          "widgetRef": "FormInputNumber",
+          "group": "formInput",
+          "eventAttr": [
+            {
+              "alias": "值改变事件",
+              "type": "onChange"
+            },
+            {
+              "alias": "鼠标移入事件",
+              "type": "onMouseIn"
+            },
+            {
+              "alias": "鼠标移除事件",
+              "type": "onMouseOut"
+            }
+          ],
+          "varAttr": [
+            {
+              "alias": "实际值",
+              "attr": "realVal",
+              "type": "number",
+              "editable": true
+            }
+          ],
+          "id": "dtWetWWp",
+          "_state": "active",
+          "propState": {
+            "title": "年龄",
+            "field": "nianling",
+            "addonAfter": null,
+            "widgetCode": "FormInputNumber$0",
+            "widgetType": null,
+            "fieldType": null,
+            "dataType": null,
+            "stringLength": null,
+            "placeholder": null,
+            "note": null,
+            "noteInfo": null,
+            "max": null,
+            "min": null,
+            "precision": null,
+            "checkFixedRule": null,
+            "checkCustomRule": null,
+            "checkErrorTooltip": null,
+            "realVal": null,
+            "exp": null,
+            "variable": null,
+            "eventRef": null,
+            "lowCode": null,
+            "codeConf": null
+          }
+        },
+        {
+          "label": "下拉选择器",
+          "icon": "FiCornerLeftDown",
+          "widgetRef": "DropdownSelector",
+          "group": "formInput",
+          "eventAttr": [
+            {
+              "alias": "值选中事件",
+              "type": "onChange"
+            },
+            {
+              "alias": "聚焦事件",
+              "type": "onFocus"
+            },
+            {
+              "alias": "失焦事件",
+              "type": "onBlur"
+            },
+            {
+              "alias": "鼠标移入事件",
+              "type": "onMouseEnter"
+            },
+            {
+              "alias": "鼠标移除事件",
+              "type": "onMouseLeave"
+            }
+          ],
+          "varAttr": [
+            {
+              "alias": "实际值",
+              "attr": "realVal",
+              "type": "string",
+              "editable": true
+            }
+          ],
+          "id": "fodlfttW",
+          "_state": "active",
+          "propState": {
+            "field": "xingbie",
+            "widgetCode": "DropdownSelector$0",
+            "optDS": null,
+            "realValDefault": null,
+            "showValField": null,
+            "realValField": null,
+            "sortInfo": null,
+            "labelColor": null,
+            "title": "性别",
+            "realVal": null,
+            "exp": null,
+            "variable": null,
+            "propOptions": {
+              "type": "api",
+              "apiMeta": {
+                "name": "性别",
+                "id": "1374891138028285952",
+                "code": "dict_xingbie",
+                "type": "DICT",
+                "columns": {
+                  "code": {
+                    "name": "编码",
+                    "code": "code",
+                    "id": "code",
+                    "dsID": "1374891138028285952"
+                  },
+                  "name": {
+                    "name": "名称",
+                    "code": "name",
+                    "id": "name",
+                    "dsID": "1374891138028285952"
+                  },
+                  "pid": {
+                    "name": "父编码",
+                    "code": "pid",
+                    "id": "pid",
+                    "dsID": "1374891138028285952"
+                  }
+                },
+                "columnsObj": {
+                  "undefined": "父编码"
+                }
+              }
+            },
+            "options": "",
+            "mode": null,
+            "showSearch": null,
+            "checkFixedRule": null,
+            "checkCustomRule": null,
+            "checkErrorTooltip": null,
+            "eventRef": null,
+            "lowCode": null,
+            "codeConf": null,
+            "placeholder": null,
+            "widgetType": null,
+            "note": null,
+            "noteInfo": null
+          }
+        },
+        {
+          "widgetRef": "FlexLayoutContainer",
+          "body": [
+            {
+              "widgetRef": "FlexLayout",
+              "icon": "FiLayout",
+              "dragable": false,
+              "isContainer": true,
+              "label": "Flex 布局",
+              "acceptChildStrategy": {
+                "strategy": "blackList",
+                "blackList": []
+              },
+              "id": "ftWfgtee",
+              "_state": "active",
+              "propState": {
+                "span": "22"
+              }
+            },
+            {
+              "widgetRef": "FlexLayout",
+              "icon": "FiLayout",
+              "dragable": false,
+              "isContainer": true,
+              "label": "Flex 布局",
+              "acceptChildStrategy": {
+                "strategy": "blackList",
+                "blackList": []
+              },
+              "id": "teldaaat",
+              "_state": "active",
+              "propState": {
+                "span": "2"
+              },
+              "body": [
+                {
+                  "widgetRef": "FormButton",
+                  "icon": "FiFeather",
+                  "label": "按钮",
+                  "group": "actionControl",
+                  "eventAttr": [
+                    {
+                      "alias": "单击事件",
+                      "type": "onClick"
+                    },
+                    {
+                      "alias": "双击事件",
+                      "type": "onDbClick"
+                    },
+                    {
+                      "alias": "鼠标移入事件",
+                      "type": "onMouseIn"
+                    },
+                    {
+                      "alias": "鼠标移出事件",
+                      "type": "onMouseOut"
+                    }
+                  ],
+                  "id": "mogoWfgW",
+                  "_state": "active",
+                  "propState": {
+                    "field": null,
+                    "widgetCode": "FormButton$0",
+                    "title": "提交",
+                    "eventRef": {
+                      "onClick": [
+                        "event,mogoWfgW,onClick,Sq1ehgZA"
+                      ]
+                    },
+                    "lowCode": null,
+                    "codeConf": null
+                  }
+                }
+              ]
+            }
+          ],
+          "id": "ltiroWgo",
+          "_state": "active",
+          "propState": {}
+        }
+      ]
+    }
+  ],
+  "id": "1374891388604395520",
+  "name": "表单模板",
+  "pageState": {
+    "eventRef": {}
+  },
+  "pageID": "1374891388604395520",
+  "meta": {
+    "apisConfig": {
+      "Wpflftoo": {
+        "type": "mockApi",
+        "ds": "ds,1367293245096341504",
+        "url": "",
+        "name": "人员表",
+        "desc": "",
+        "id": "Wpflftoo"
+      }
+    },
+    "events": {
+      "event,mogoWfgW,onClick,Sq1ehgZA": {
+        "actList": [
+          "mfccmfcm",
+          "closePage"
+        ]
+      },
+      "event,PC,onPageLoad,VyIe240l": {
+        "actList": [
+          "ocpatltt"
+        ]
+      }
+    },
+    "widgetCounter": 0,
+    "dataSource": {
+      "ds,1367293245096341504": {
+        "name": "人员表",
+        "id": "1367293245096341504",
+        "moduleId": "1357574780575952896",
+        "code": "renyuanbiao",
+        "auxTable": {
+          "containAuxTable": true
+        },
+        "tableType": "TABLE",
+        "columns": {
+          "1367293245142478849": {
+            "id": "1367293245142478849",
+            "name": "创建人主键",
+            "colDataType": "NORMAL",
+            "fieldSize": 20,
+            "fieldType": "INT",
+            "fieldCode": "create_user_id",
+            "species": "SYS_TMPL",
+            "dsID": "1367293245096341504"
+          },
+          "1374891308140867585": {
+            "id": "1374891308140867585",
+            "name": "性别",
+            "colDataType": "DICT",
+            "fieldSize": 32,
+            "fieldType": "STRING",
+            "fieldCode": "xingbie",
+            "species": "BIS",
+            "dsID": "1367293245096341504"
+          },
+          "1367293245146673159": {
+            "id": "1367293245146673159",
+            "name": "创建时间",
+            "colDataType": "NORMAL",
+            "fieldSize": 0,
+            "fieldType": "DATE_TIME",
+            "fieldCode": "create_time",
+            "species": "SYS_TMPL",
+            "dsID": "1367293245096341504"
+          },
+          "1367293245146673158": {
+            "id": "1367293245146673158",
+            "name": "创建人名称",
+            "colDataType": "NORMAL",
+            "fieldSize": 32,
+            "fieldType": "STRING",
+            "fieldCode": "create_user_name",
+            "species": "SYS_TMPL",
+            "dsID": "1367293245096341504"
+          },
+          "1367293245146673161": {
+            "id": "1367293245146673161",
+            "name": "数据版本",
+            "colDataType": "NORMAL",
+            "fieldSize": 32,
+            "fieldType": "STRING",
+            "fieldCode": "data_version",
+            "species": "SYS_TMPL",
+            "dsID": "1367293245096341504"
+          },
+          "1367293411220140038": {
+            "id": "1367293411220140038",
+            "name": "年龄",
+            "colDataType": "NORMAL",
+            "fieldSize": 8,
+            "fieldType": "INT",
+            "fieldCode": "nianling",
+            "species": "BIS",
+            "dsID": "1367293245096341504"
+          },
+          "1367293245146673166": {
+            "id": "1367293245146673166",
+            "name": "最后修改人主键",
+            "colDataType": "NORMAL",
+            "fieldSize": 20,
+            "fieldType": "INT",
+            "fieldCode": "last_update_user_id",
+            "species": "SYS_TMPL",
+            "dsID": "1367293245096341504"
+          },
+          "1367293411220140033": {
+            "id": "1367293411220140033",
+            "name": "姓名",
+            "colDataType": "NORMAL",
+            "fieldSize": 32,
+            "fieldType": "STRING",
+            "fieldCode": "xingming",
+            "species": "BIS",
+            "dsID": "1367293245096341504"
+          },
+          "1367293245146673153": {
+            "id": "1367293245146673153",
+            "name": "最后修改时间",
+            "colDataType": "NORMAL",
+            "fieldSize": 0,
+            "fieldType": "DATE_TIME",
+            "fieldCode": "last_update_time",
+            "species": "SYS_TMPL",
+            "dsID": "1367293245096341504"
+          },
+          "1367293245146673155": {
+            "id": "1367293245146673155",
+            "name": "排序序号",
+            "colDataType": "NORMAL",
+            "fieldSize": 8,
+            "fieldType": "INT",
+            "fieldCode": "sequence",
+            "species": "SYS_TMPL",
+            "dsID": "1367293245096341504"
+          },
+          "1374891308140867591": {
+            "id": "1374891308140867591",
+            "name": "日期",
+            "colDataType": "NORMAL",
+            "fieldSize": 0,
+            "fieldType": "DATE",
+            "fieldCode": "riqi",
+            "species": "BIS",
+            "dsID": "1367293245096341504"
+          },
+          "1367293245146673163": {
+            "id": "1367293245146673163",
+            "name": "主键",
+            "colDataType": "PK",
+            "fieldSize": 20,
+            "fieldType": "INT",
+            "fieldCode": "id",
+            "species": "SYS",
+            "dsID": "1367293245096341504"
+          },
+          "1367293245146673168": {
+            "id": "1367293245146673168",
+            "name": "最后修改人名称",
+            "colDataType": "NORMAL",
+            "fieldSize": 32,
+            "fieldType": "STRING",
+            "fieldCode": "last_update_user_name",
+            "species": "SYS_TMPL",
+            "dsID": "1367293245096341504"
+          }
+        },
+        "type": "TABLE",
+        "createdBy": [
+          "prop"
+        ]
+      }
+    },
+    "pageInterface": {},
+    "linkage": {},
+    "schema": {},
+    "actions": {
+      "closePage": {
+        "actionConfig": {
+          "config": {},
+          "type": "closePage",
+          "label": "关闭页面"
+        },
+        "actionName": "关闭页面",
+        "id": "closePage",
+        "preCheck": "",
+        "triggerCondition": ""
+      },
+      "mfccmfcm": {
+        "actionName": "整表提交",
+        "preCheck": "",
+        "actionConfig": {
+          "config": {
+            "api": "ds,1367293245096341504",
+            "submitType": "submitWholeForm",
+            "method": {
+              "exp": "",
+              "realVal": "",
+              "variable": "var_pageInput_0_mode",
+              "variableConfig": {
+                "code": "var.page.mode",
+                "type": "pageInput",
+                "varType": "string",
+                "id": "var_pageInput_0_mode",
+                "realVal": "insert",
+                "title": "页面模式",
+                "pid": "pageInput",
+                "key": "var_pageInput_0_mode",
+                "wholeTitle": "页面模式",
+                "label": "页面模式",
+                "value": "var_pageInput_0_mode"
+              }
+            },
+            "fieldList": [
+              {
+                "field": "",
+                "realVal": "",
+                "exp": "",
+                "variable": "",
+                "id": "reotdtlr"
+              }
+            ],
+            "rangeList": [
+              {
+                "field": "id",
+                "realVal": "",
+                "exp": "",
+                "variable": "var_pageInput_1_LcAQQYi3",
+                "id": "eflplrWm",
+                "variableConfig": {
+                  "code": "id",
+                  "type": "pageInput",
+                  "varType": "string",
+                  "alias": null,
+                  "id": "var_pageInput_1_LcAQQYi3",
+                  "realVal": null,
+                  "title": "主键",
+                  "pid": "pageInput",
+                  "key": "var_pageInput_1_LcAQQYi3",
+                  "wholeTitle": "主键",
+                  "label": "主键",
+                  "value": "var_pageInput_1_LcAQQYi3"
+                }
+              }
+            ]
+          },
+          "type": "submit2api",
+          "label": "提交数据到 API"
+        },
+        "triggerCondition": "",
+        "id": "mfccmfcm"
+      },
+      "ocpatltt": {
+        "actionName": "整表回填",
+        "preCheck": "",
+        "actionConfig": {
+          "config": {
+            "api": "",
+            "rangeList": [
+              {
+                "field": "id",
+                "realVal": "",
+                "exp": "",
+                "variable": "var_pageInput_1_LcAQQYi3",
+                "id": "ttpmatft",
+                "variableConfig": {
+                  "code": "id",
+                  "type": "pageInput",
+                  "varType": "string",
+                  "alias": null,
+                  "id": "var_pageInput_1_LcAQQYi3",
+                  "realVal": null,
+                  "title": "主键",
+                  "pid": "pageInput",
+                  "key": "var_pageInput_1_LcAQQYi3",
+                  "wholeTitle": "主键",
+                  "label": "主键",
+                  "value": "var_pageInput_1_LcAQQYi3"
+                }
+              }
+            ],
+            "fieldList": [
+              {
+                "field": "",
+                "variable": ""
+              }
+            ],
+            "requestType": "requestWholeForm"
+          },
+          "type": "requestRelatedRecord",
+          "label": "数据联动"
+        },
+        "triggerCondition": ""
+      }
+    },
+    "varRely": {
+      "var_pageInput_0_mode": {
+        "title": "页面模式",
+        "type": "pageInput",
+        "varType": "string",
+        "realVal": "insert",
+        "code": "var.page.mode"
+      },
+      "var,oWrgpgtg": {
+        "type": "widget",
+        "widgetRef": "oWrgpgtg",
+        "varAttr": [
+          {
+            "alias": "实际值",
+            "attr": "realVal",
+            "type": "string",
+            "editable": true
+          }
+        ]
+      },
+      "var,dtWetWWp": {
+        "type": "widget",
+        "widgetRef": "dtWetWWp",
+        "varAttr": [
+          {
+            "alias": "实际值",
+            "attr": "realVal",
+            "type": "number",
+            "editable": true
+          }
+        ]
+      },
+      "var,fodlfttW": {
+        "type": "widget",
+        "widgetRef": "fodlfttW",
+        "varAttr": [
+          {
+            "alias": "实际值",
+            "attr": "realVal",
+            "type": "string",
+            "editable": true
+          }
+        ]
+      },
+      "var,ltiroWgo": {
+        "type": "widget",
+        "widgetRef": "ltiroWgo"
+      },
+      "var,mogoWfgW": {
+        "type": "widget",
+        "widgetRef": "mogoWfgW"
+      },
+      "var_pageInput_1_LcAQQYi3": {
+        "title": "主键",
+        "code": "id",
+        "varType": "string",
+        "realVal": null,
+        "alias": null,
+        "type": "pageInput"
+      }
+    },
+    "_rely": {
+      "Wpflftoo": [],
+      "var,oWrgpgtg": [
+        "oWrgpgtg"
+      ],
+      "var,dtWetWWp": [
+        "dtWetWWp"
+      ],
+      "var,fodlfttW": [
+        "fodlfttW"
+      ],
+      "var,ltiroWgo": [
+        "ltiroWgo"
+      ],
+      "var,mogoWfgW": [
+        "mogoWfgW"
+      ]
+    }
+  }
+}

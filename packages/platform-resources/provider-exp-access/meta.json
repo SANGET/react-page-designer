@@ -1,0 +1,248 @@
+[
+  {
+    "title": "字符串函数",
+    "key": "string",
+    "items": [
+      {
+        "name": "Length",
+        "example": "Length('张三') 返回 2",
+        "usage": "Length(str: string): number",
+        "desc": "获取字符串长度，返回值为数字"
+      },
+      {
+        "name": "CharAt",
+        "example": "CharAt('张三李四', 2) 返回 李",
+        "usage": "CharAt(str: string, index: number): string",
+        "desc": "方法可返回指定位置的字符，返回值为子字符串"
+      },
+      {
+        "name": "Concat",
+        "example": "Concat('张三', '李四') 返回 张三李四",
+        "usage": "Concat(str1: string, str2: string, ...): string",
+        "desc": "连接两个或多个字符串，参数表示连接的字符串"
+      },
+      {
+        "name": "IndexOf",
+        "example": "IndexOf('张三李四', '三') 返回 1",
+        "usage": "IndexOf(str: string, searchValue: string): number",
+        "desc": "某个指定字符串在该字符串中首次出现的位置，值可为0~字符串长度-1，searchValue 表示查找的指定字符串"
+      },
+      {
+        "name": "Replace",
+        "example": "Replace('张三李四', '三', '五') 返回 张五李四",
+        "usage": "Replace(str: string, searchValue: string, newValue: string): string",
+        "desc": "将字符串中的某个字符串替换为另外的字符串。 其中，searchvalue 表示被替换的字符串，newvalue 表示替换成的字符串"
+      },
+      {
+        "name": "Split",
+        "example": "Split('abcbebf', 'b', 3) 返回 ['a', 'c', 'e']",
+        "usage": "Split(str, separator: string, howmany?: number): string[]",
+        "desc": "将字符串按照一定规则分割成字符串组，数组的各个元素以”,”分隔，其中，separator 参数表示用于分隔的字符串，howmany 表示数组的最大长度"
+      },
+      {
+        "name": "Substr",
+        "example": "Substr('abcdef', 2, 1) 返回 c",
+        "usage": "Substr(str: string, start: number, length: number): string",
+        "desc": "字符串截取函数，从 start 位置提取 length 长度的字符串。当从第一个字符截取时，start 的值等于0"
+      },
+      {
+        "name": "ToLowerCase",
+        "example": "ToLowerCase('ABC') 返回 abc",
+        "usage": "ToLowerCase(str: string): string",
+        "desc": "将字符串的全部字符都转换为小写"
+      },
+      {
+        "name": "ToUpperCase",
+        "example": "ToUpperCase('abc') 返回 ABC",
+        "usage": "ToUpperCase(str: string)",
+        "desc": "将字符串的全部字符都转换为大写"
+      },
+      {
+        "name": "Trim",
+        "example": "Trim('    abc  ') 返回 abc",
+        "usage": "Trim(str: string): string",
+        "desc": "删除字符串的 首尾空格"
+      },
+      {
+        "name": "ToString",
+        "example": "ToString(123) 返回字符串 123",
+        "usage": "ToString(str: any): string",
+        "desc": "转换为字符串，并返回"
+      },
+      {
+        "name": "ParseInt",
+        "example": "ParseInt('123.4') 返回 123",
+        "usage": "ParseInt(str: string): number",
+        "desc": "字符转整数"
+      },
+      {
+        "name": "ParseFloat",
+        "example": "ParseFloat('123.45') 返回 123.45",
+        "usage": "ParseFloat(str: string): number",
+        "desc": "字符转浮点数"
+      },
+      {
+        "name": "IsEmpty",
+        "example": "IsEmpty('123') 返回 false",
+        "usage": "IsEmpty(str: string): boolean",
+        "desc": "判断字符串是否为空，为空返回 true;不为空返回 false"
+      }
+    ]
+  },
+  {
+    "title": "数学函数",
+    "key": "number",
+    "items": [
+      {
+        "name": "Ceil",
+        "example": "Ceil(1.23) 返回 2",
+        "usage": "Ceil(x: number): number",
+        "desc": "向上取整"
+      },
+      {
+        "name": "Floor",
+        "example": "Floor(1.53) 返回 1",
+        "usage": "Floor(x: number): number",
+        "desc": "向下取整"
+      },
+      {
+        "name": "Max",
+        "example": "Max(1, 2) 返回 2",
+        "usage": "Max(x: number, y: number): number",
+        "desc": "返回x和y两个数的最大值"
+      },
+      {
+        "name": "Min",
+        "example": "Min(1, 2) 返回 1",
+        "usage": "Min(x: number, y: number): number",
+        "desc": "返回x和y两个数的最小值"
+      },
+      {
+        "name": "Random",
+        "example": "Random() 返回 0.3482465607929486 不唯一",
+        "usage": "Random(): number",
+        "desc": "返回0到1的随机数"
+      },
+      {
+        "name": "Round",
+        "example": "Round('1.51') 返回 2",
+        "usage": "Round(x: number): number",
+        "desc": "四舍五入取整"
+      }
+    ]
+  },
+  {
+    "title": "日期函数",
+    "key": "async",
+    "items": [
+      {
+        "name": "Now",
+        "example": "Now() 返回 '2021-03-25 11:59:08' 不唯一",
+        "usage": "Now(): string",
+        "desc": "返回计算机系统当前设定的日期和时间值"
+      },
+      {
+        "name": "Date",
+        "example": "Date('2021-01-01') 返回 Thu Mar 25 2021 12:01:36 GMT+0800 (中国标准时间)",
+        "usage": "Date(d: string): date",
+        "desc": "将字符串转为日期格式"
+      },
+      {
+        "name": "Format",
+        "example": "Format(new Date(), 'YYYY-MM-DD HH:mm:ss') 返回 '2021-03-25 14:11:32' 不唯一",
+        "usage": "Format(d: date, str: string)",
+        "desc": "new Date() 为 JS 代码生成的时间格式，也可以由函数库中 Date 函数生成。按格式化要求返回日期对象格式化字符串，更多规则请查阅 https://day.js.org/"
+      },
+      {
+        "name": "GetDate",
+        "example": "GetDate(new Date()) 返回 25 不唯一",
+        "usage": "GetDate(d: date)",
+        "desc": "new Date() 为 JS 代码生成的时间格式，也可以由函数库中 Date 函数生成。返回 Date 对象属于哪一天的值，可取值 1-31"
+      },
+      {
+        "name": "GetFullYear",
+        "example": "GetDate(new Date()) 返回 2021 不唯一",
+        "usage": "GetFullYear(d: date)",
+        "desc": "new Date() 为 JS 代码生成的时间格式，也可以由函数库中 Date 函数生成。获得日期对象的 4 位年份值，如 2015"
+      },
+      {
+        "name": "GetHours",
+        "example": "GetHours(new Date()) 返回 14 不唯一",
+        "usage": "GetHours(d: date)",
+        "desc": "new Date() 为 JS 代码生成的时间格式，也可以由函数库中 Date 函数生成。获得日期对象的小时值，可取值0～23"
+      },
+      {
+        "name": "GetMonth",
+        "example": "GetMonth(new Date()) 返回 3 不唯一",
+        "usage": "GetMonth(d: date)",
+        "desc": "new Date() 为 JS 代码生成的时间格式，也可以由函数库中 Date 函数生成。获得日期对象的月份值"
+      },
+      {
+        "name": "Parse",
+        "example": "Parse(new Date()) 返回 1616653303518 不唯一",
+        "usage": "Parse(d: date ｜ string)",
+        "desc": "new Date() 为 JS 代码生成的时间格式，也可以由函数库中 Date 函数生成。格式化日期，返回日期字符串相对1970年1月1日的毫秒数"
+      },
+      {
+        "name": "ToDateString",
+        "example": "ToDateString(new Date()) 返回 'Thu, 25 Mar 2021 06:29:35 GMT'",
+        "usage": "ToDateString(d: date)",
+        "desc": "new Date() 为 JS 代码生成的时间格式，也可以由函数库中 Date 函数生成。将 Date 对象转换为字符串"
+      },
+      {
+        "name": "ToJSON",
+        "example": "ToJSON(new Date()) 返回 '2021-03-25T06:42:15.632Z'",
+        "usage": "ToJSON(d: date)",
+        "desc": "new Date() 为 JS 代码生成的时间格式，也可以由函数库中 Date 函数生成。将日期对象进行 JSON（JavaScript Object Notation）序列化"
+      },
+      {
+        "name": "ToLocaleDateString",
+        "example": "ToLocaleDateString(new Date()) 返回 2021/3/25",
+        "usage": "ToLocaleDateString(d: date)",
+        "desc": "new Date() 为 JS 代码生成的时间格式，也可以由函数库中 Date 函数生成。根据本地日期格式，将 Date 对象转换为日期字符串"
+      },
+      {
+        "name": "ToLocaleTimeString",
+        "example": "ToLocaleTimeString(new Date()) 返回 下午2:46:42",
+        "usage": "ToLocaleTimeString(d: date)",
+        "desc": "new Date() 为 JS 代码生成的时间格式，也可以由函数库中 Date 函数生成。根据本地时间格式，将 Date 对象转换为时间字符串"
+      },
+      {
+        "name": "ToLocaleString",
+        "example": "ToLocaleString(new Date()) 返回 2021/3/25下午2:48:10",
+        "usage": "ToLocaleString(d: date)",
+        "desc": "new Date() 为 JS 代码生成的时间格式，也可以由函数库中 Date 函数生成。根据本地日期时间格式，将 Date 对象转换为日期时间字符串"
+      },
+      {
+        "name": "ToTimeString",
+        "example": "ToTimeString(new Date()) 返回 14:51:01 GMT+0800 (中国标准时间)",
+        "usage": "ToTimeString(d: date)",
+        "desc": "new Date() 为 JS 代码生成的时间格式，也可以由函数库中 Date 函数生成。将日期对象的时间部分转换为字符串"
+      },
+      {
+        "name": "ValueOf",
+        "example": "ValueOf(new Date()) 返回 1616653303518 不唯一",
+        "usage": "ValueOf(d: date)",
+        "desc": "返回 Date 对象的原始值"
+      },
+      {
+        "name": "addDays",
+        "example": "addDays(new Date(), 1)",
+        "usage": "addDays(d: date, day: number)",
+        "desc": "new Date() 为 JS 代码生成的时间格式，也可以由函数库中 Date 函数生成。将某个 Date 对象加上若干天数，生成一个新的 Date 对象"
+      },
+      {
+        "name": "addHour",
+        "example": "addDays(new Date(), 1)",
+        "usage": "addHour(d: date, hour: number)",
+        "desc": "new Date() 为 JS 代码生成的时间格式，也可以由函数库中 Date 函数生成。将某个 Date 对象加上若干小时数，生成一个新的 Date 对象"
+      },
+      {
+        "name": "addMinutes",
+        "example": "addDays(new Date(), 1)",
+        "usage": "addMinutes(d: date, day: minutes)",
+        "desc": "new Date() 为 JS 代码生成的时间格式，也可以由函数库中 Date 函数生成。将某个 Date 对象加上若干分钟数，生成一个新的 Date 对象"
+      }
+    ]
+  }
+]

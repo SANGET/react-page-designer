@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/widget-coding-helper",
+  "description": "组件编码属性编辑",
+  "version": "0.0.1",
+  "author": "SANGET",
+  "license": "MIT",
+  "dependencies": {}
+}

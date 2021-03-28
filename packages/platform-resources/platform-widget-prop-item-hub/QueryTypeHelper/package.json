@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/query-type-helper",
+  "description": "查询方式（表格）",
+  "version": "0.0.1",
+  "author": "LIJIA",
+  "license": "MIT",
+  "dependencies": {}
+}

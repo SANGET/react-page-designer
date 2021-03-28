@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/check-row-helper",
+  "description": "选中数据行配置",
+  "version": "0.0.1",
+  "author": "LIJIA",
+  "license": "MIT",
+  "dependencies": {}
+}

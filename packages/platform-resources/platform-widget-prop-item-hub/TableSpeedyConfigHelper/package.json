@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/table-speedy-config-helper",
+  "description": "表格属性快捷配置",
+  "version": "0.0.1",
+  "author": "SANGET",
+  "license": "MIT",
+  "dependencies": {}
+}

@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/time-mode-helper",
+  "description": "展示的时间类型",
+  "version": "0.0.1",
+  "author": "value",
+  "license": "MIT",
+  "dependencies": {}
+}

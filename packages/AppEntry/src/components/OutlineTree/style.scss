@@ -1,0 +1,21 @@
+.outline-tree {
+  .tree-wrapper {
+    border-left: 1px solid transparent;
+    .label {
+      // border-bottom: 1px solid #eee;
+    }
+    // border: 1px solid transparent;
+    &.hovering {
+      color: #000;
+      > .label {
+        background-color: #f7f7f7;
+      }
+    }
+    &.selected {
+      border-color: #488cf0;
+      > .label {
+        background-color: #eee;
+      }
+    }
+  }
+}

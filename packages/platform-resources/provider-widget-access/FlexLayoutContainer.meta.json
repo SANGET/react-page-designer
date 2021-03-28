@@ -1,0 +1,20 @@
+{
+  "widgetRef": "FlexLayoutContainer",
+  "icon": "FiLayout",
+  "label": "布局容器",
+  "group": "container",
+  "isContainer": true,
+  "acceptChildStrategy": { "strategy": "blackList", "blackList": [] },
+  "propItemsRely": {
+    "propItemRefs": [
+      {
+        "propID": "prop_flex_config",
+        "editAttr": ["span"],
+        "defaultValues": { "span": 24 }
+      },
+      {
+        "propID": "prop_style"
+      }
+    ]
+  }
+}

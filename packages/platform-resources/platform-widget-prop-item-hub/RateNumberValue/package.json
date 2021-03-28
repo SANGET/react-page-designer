@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/rate-number-value",
+  "description": "评分值",
+  "version": "0.0.1",
+  "author": "ywq",
+  "license": "MIT",
+  "dependencies": {}
+}

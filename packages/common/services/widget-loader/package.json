@@ -1,0 +1,9 @@
+{
+  "name": "@platform-widget-access/loader",
+  "description": "平台组件加载器",
+  "version": "0.0.1",
+  "author": "SANGET",
+  "license": "MIT",
+  "dependencies": {
+  }
+}

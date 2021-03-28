@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/style-helper",
+  "description": "样式编辑器",
+  "version": "0.0.1",
+  "author": "SANGET",
+  "license": "MIT",
+  "dependencies": {}
+}

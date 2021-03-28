@@ -1,0 +1,29 @@
+.action-config-creator {
+  .action-list {
+    max-height: 70vh;
+    overflow-y: auto;
+    border-right: 1px solid #eee;
+    .list-item {
+      border-bottom: 1px solid #eee;
+      &.active {
+      }
+    }
+  }
+  .action-config-panel {
+    min-height: 300px;
+    max-height: 70vh;
+    overflow-y: auto;
+    .error {
+      color: red;
+      position: absolute;
+    }
+    .value-hepler {
+      .ant-select {
+        width: auto;
+      }
+      .variable-selector {
+        width: calc(100% - 70px);
+      }
+    }
+  }
+}

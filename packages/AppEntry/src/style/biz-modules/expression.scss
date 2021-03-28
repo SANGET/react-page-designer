@@ -1,0 +1,115 @@
+.expression {
+  .CodeMirror {
+    border: 1px solid #e0e0e0;
+  }
+  .action-bar {
+    margin-top: 10px;
+  }
+  .ant-card-head {
+    padding: 0 10px;
+    min-height: 30px;
+
+    .ant-card-head-title {
+      padding: 8px 0;
+    }
+  }
+  .ant-card-body {
+    padding: 10px;
+  }
+  .ant-list-item {
+    padding: 8px 4px !important;
+  }
+  .ant-list-item-action {
+    margin-left: 10px;
+  }
+}
+
+.expression {
+  padding: 20px;
+  &-handle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-tip {
+      color: #faad14;
+    }
+  }
+  &-option {
+    h4 {
+      font-size: 12px;
+      color: #91a1b7;
+      line-height: 18px;
+      margin: 5px 0;
+      font-weight: 400;
+    }
+    &-body {
+      border: 1px solid #e0e0e0;
+      height: 32vh;
+      overflow-y: auto;
+    }
+    .ant-space-item {
+      display: flex;
+      align-items: center;
+    }
+    .ant-collapse {
+      background-color: transparent !important;
+      user-select: none;
+    }
+    .ant-collapse-item {
+      border-bottom: none !important;
+    }
+    .ant-list-item {
+      border-bottom: none !important;
+      font-size: 12px;
+      cursor: pointer;
+      &:hover {
+        background-color: #e6f7ff;
+      }
+    }
+  }
+  &-header {
+    border-top: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    width: 100%;
+    background-color: #e6f7ff;
+    font-size: 14px;
+    height: 36px;
+    line-height: 36px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-footer {
+    border-bottom: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
+    border-right: 1px solid #e0e0e0;
+    width: 100%;
+    background-color: #e6f7ff;
+    font-size: 14px;
+    height: 36px;
+    line-height: 36px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+  }
+  &-editor {
+    margin-bottom: 5px;
+    min-height: 200px;
+  }
+  .cm-field {
+    margin: 1px;
+    padding: 0 5px;
+  }
+  .cm-field-value {
+    background-color: #ebf5ff;
+    // color: #008dcd;
+    user-select: none;
+  }
+  .cm-method-value {
+    background-color: #ebf5ff;
+    color: #008dcd !important;
+    user-select: none;
+  }
+}

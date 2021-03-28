@@ -1,0 +1,9 @@
+{
+  "name": "@platform-widget-prop-item/low-code-helper",
+  "description": "低代码",
+  "version": "0.0.1",
+  "author": "ywq",
+  "license": "MIT",
+  "dependencies": {
+  }
+}
