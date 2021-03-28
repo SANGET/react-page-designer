@@ -56,7 +56,7 @@ const genEnvConfig = (configName, extraConfig) => {
   if (!configName) {
     throw Error("必须传入 config name");
   }
-  const configVersion = 7;
+  const configVersion = 8;
   const publicConfigPath = path.join(__dirname, `public/${configName}`);
 
   // 已存在的配置
@@ -182,7 +182,7 @@ module.exports = {
       FEResourceServerUrl: "http://localhost:3000/node-web",
       previewAppEntryUrl: "http://localhost:22110",
       toolHelperUrl: "http://192.168.14.181:6677",
-      platformUIUrl: "http://localhost:38000/platform-ui.js",
+      platformUIUrl: "/runtime/platform-ui.js",
       externalScripts: [],
     });
     // 生成生成环境的配置
@@ -193,7 +193,7 @@ module.exports = {
       toolHelperUrl: "http://192.168.14.181:6677",
       externalScripts: [],
       platformUIUrl:
-        "http://localhost:38000/platform-ui.js",
+        "/runtime/platform-ui.js",
     });
   },
 };

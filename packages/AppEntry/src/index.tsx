@@ -19,6 +19,15 @@ const envConfigFromProcess = {
   previewAppEntryUrl,
 };
 
+const removeLoadingBG = () => {
+  const loaderDOM = document.querySelector("#loadingBg");
+  if (!loaderDOM || !loaderDOM.parentNode) return;
+  loaderDOM.classList.add("loaded");
+  loaderDOM.parentNode.removeChild(loaderDOM);
+  // setTimeout(() => {
+  // }, 100);
+};
+
 /**
  * 根据程序环境获取环境配置的地址
  */
@@ -50,6 +59,7 @@ fetch(getEnvConfigUrl())
 
       // 异步加载外部 script
       // await loadExternalScriptsSync(config.externalScripts);
+      removeLoadingBG();
 
       // 渲染页面
       const P = App({});
