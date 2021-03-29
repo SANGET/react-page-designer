@@ -12,7 +12,10 @@ import { BiMobileAlt, BiDesktop } from "react-icons/bi";
 import { getAppPreviewUrl } from "@provider-app/provider-app-common/config/getPreviewUrl";
 import { loadPropItemMetadata } from "@provider-app/provider-app-common/services/widget-loader";
 import { Tooltip } from "react-tippy";
-import { StageContext } from "@provider-app/page-visual-editor-engine/utils/stage-context";
+import {
+  defaultStageWidth,
+  StageContext,
+} from "@provider-app/page-visual-editor-engine/utils/stage-context";
 import { PlatformContext } from "../../utils";
 import { PageConfigContainer } from "../PDPageConfiguration";
 
@@ -149,7 +152,7 @@ const ToolbarCustom: React.FC<ToolbarCustomProps> = ({
         <Tooltip title="PC 模式">
           <BiDesktop
             onClick={(e) => {
-              stageCtx.changeStageWidth(1024);
+              stageCtx.changeStageWidth(defaultStageWidth);
             }}
             className={`${layoutModeIconClasses}${
               !isMobileWidth ? " active" : ""

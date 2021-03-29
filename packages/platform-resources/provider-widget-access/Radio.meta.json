@@ -1,6 +1,6 @@
 {
   "label": "单选框",
-  "icon": "FiCornerLeftDown",
+  "icon": "FiDisc",
   "widgetRef": "Radio",
   "group": "formInput",
   "eventAttr": [

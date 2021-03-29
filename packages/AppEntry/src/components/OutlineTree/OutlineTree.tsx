@@ -22,6 +22,7 @@ const outlineItemRenderer = (stageCtx: StageContextRes) => (nodeItem) => {
   const isHovering = hoveringPath.join("") === treeNodePath.join("");
   const isSelected = selectedPath.join("") === treeNodePath.join("");
   const treeWrapperClasses = classnames([
+    "text-gray-600",
     "tree-wrapper",
     isHovering && "hovering",
     isSelected && "selected",
@@ -49,9 +50,9 @@ const outlineItemRenderer = (stageCtx: StageContextRes) => (nodeItem) => {
           })}
         >
           {children ? (
-            <FiChevronDown className="mr-2" />
+            <FiChevronDown className="mr-2 text-gray-400" />
           ) : (
-            <FiMinus className="mr-2" />
+            <FiMinus className="mr-2 text-gray-300" />
           )}
           {label}
         </div>

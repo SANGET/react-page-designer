@@ -1,6 +1,6 @@
 {
   "label": "下拉选择器",
-  "icon": "FiCornerLeftDown",
+  "icon": "FiArrowDown",
   "widgetRef": "DropdownSelector",
   "group": "formInput",
   "eventAttr": [

@@ -27,7 +27,10 @@ import React from "react";
 import { getAppConfig } from "@provider-app/provider-app-common/config";
 import { loadExternalScriptsSync } from "@provider-app/provider-app-common/utils/loadExternalScripts";
 import { treeNodeHelper } from "@provider-app/page-visual-editor-engine/utils";
-import { StageContext } from "@provider-app/page-visual-editor-engine/utils/stage-context";
+import {
+  defaultStageWidth,
+  StageContext,
+} from "@provider-app/page-visual-editor-engine/utils/stage-context";
 import CanvasStage from "./components/PDCanvasStage";
 import { PDPropertiesEditor } from "./components/PDPropertiesEditor";
 import ToolBar from "./components/PDToolbar";
@@ -59,7 +62,7 @@ class PageDesignerApp extends React.Component<
   state = {
     hoveringPath: [],
     selectedPath: [],
-    stageWidth: 1024,
+    stageWidth: defaultStageWidth,
   };
 
   selectedEntity!: WidgetEntity;

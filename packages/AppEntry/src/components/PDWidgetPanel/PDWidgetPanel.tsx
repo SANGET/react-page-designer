@@ -135,7 +135,7 @@ const PDWidgetPanel: React.FC<PageDesignerComponentPanelProps> = ({
 
   return (
     <div className="component-panel-container flex h-full">
-      <div className="comp-tool w-16">
+      <div className="comp-tool w-3/12">
         {actionItems.map((item, idx) => {
           const { label, icon, action } = item;
           const I = ReactIcon[icon];
@@ -170,8 +170,8 @@ const PDWidgetPanel: React.FC<PageDesignerComponentPanelProps> = ({
           );
         })}
       </div>
-      <div className="active-panel flex-1">
-        <div className="panel-body">
+      <div className="active-panel w-9/12">
+        <div className="panel-body overflow-y-auto h-full">
           {/* <div className="panel-header">{activeItem.label}</div> */}
           {activeItem.render({
             genPageCode,

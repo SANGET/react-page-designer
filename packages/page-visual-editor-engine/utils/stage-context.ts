@@ -10,13 +10,15 @@ export interface StageContextRes {
   changeStageWidth: (stageWidth: number | string) => void
 }
 
+export const defaultStageWidth = 960;
+
 /**
  * 平台提供给的上下文
  */
 export const createStageCtx = (): StageContextRes => {
   let hoveringPath: TreeNodePath = [];
   let selectedPath: TreeNodePath = [];
-  let stageWidth = 1024;
+  let stageWidth = defaultStageWidth;
   return { 
     selectedPath,
     hoveringPath,

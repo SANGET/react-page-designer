@@ -1,6 +1,6 @@
 {
   "label": "复选框",
-  "icon": "FiCornerLeftDown",
+  "icon": "FiSquare",
   "widgetRef": "Checkbox",
   "group": "formInput",
   "eventAttr": [
