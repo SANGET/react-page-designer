@@ -34,6 +34,8 @@ import { StageContextRes } from "../../utils/stage-context";
  * 中央舞台组件的 props
  */
 export interface CanvasStageProps extends VEDispatcher {
+  /**  */
+  styleForStage;
   /** 组件包接入规范  */
   dragableItemWrapper: DragableItemWrapperFac;
   /** 获取属性项的 meta 数据 */
@@ -361,6 +363,7 @@ class CanvasStage extends React.Component<CanvasStageProps> {
 
   render() {
     const {
+      styleForStage,
       pageEntityState,
       // accept,
       onStageClick,
@@ -373,7 +376,7 @@ class CanvasStage extends React.Component<CanvasStageProps> {
     const pageStyle = pageEntityState?.style;
 
     return (
-      <div className="canvas-stage-container">
+      <div className="canvas-stage-container" style={styleForStage}>
         <LayoutRenderer
           layoutNode={layoutNodeInfo}
           componentRenderer={dragableItemWrapper(this.wrapperContext)}

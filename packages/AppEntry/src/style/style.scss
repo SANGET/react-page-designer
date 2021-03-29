@@ -50,6 +50,11 @@ svg {
 }
 
 .component-panel-container {
+  .active-panel {
+    .panel-body {
+      padding: 8px 12px;
+    }
+  }
   // padding: 10px;
   .comp-tool {
     border-right: 1px solid #ddd;
@@ -352,6 +357,12 @@ svg {
     .__dev_env_info {
       display: block;
     }
+  }
+}
+
+.layout-mode-icon {
+  &.active {
+    color: var(--theme-color);
   }
 }
 

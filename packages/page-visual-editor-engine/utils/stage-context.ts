@@ -4,8 +4,10 @@ import { TreeNodePath } from ".";
 export interface StageContextRes {
   hoveringPath: TreeNodePath
   selectedPath: TreeNodePath
+  stageWidth: number | string
   changeHoveringPath: (treeNodePath: TreeNodePath) => void
   changeSelectedPath: (treeNodePath: TreeNodePath) => void
+  changeStageWidth: (stageWidth: number | string) => void
 }
 
 /**
@@ -14,14 +16,19 @@ export interface StageContextRes {
 export const createStageCtx = (): StageContextRes => {
   let hoveringPath: TreeNodePath = [];
   let selectedPath: TreeNodePath = [];
+  let stageWidth = 1024;
   return { 
     selectedPath,
     hoveringPath,
+    stageWidth,
     changeHoveringPath: (nextPath) => {
       hoveringPath = nextPath;
     },
     changeSelectedPath: (nextPath) => {
       selectedPath = nextPath;
+    },
+    changeStageWidth: (nextVal) => {
+      stageWidth = nextVal;
     },
   };
 };

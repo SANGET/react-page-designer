@@ -1,6 +1,9 @@
 import React from "react";
 import { CloseModal, ShowModal, Tabs, Tab } from "@provider-app/shared-ui";
-import { PropItem, PropItemRenderContext } from "@provider-app/platform-access-spec";
+import {
+  PropItem,
+  PropItemRenderContext,
+} from "@provider-app/platform-access-spec";
 import { ColumnsSpeedyHelper } from "./ColumnsSpeedyHelper";
 // import { TableSpeedyConfigComp, SelectedField } from "./comp";
 
@@ -38,7 +41,7 @@ export default class TableSpeedyConfigHelperSpec {
         title: "表格配置",
         type: "normal",
         position: "top",
-        width: "85%",
+        width: 1000,
         children: () => {
           return (
             <div className="p-5 pt-0">

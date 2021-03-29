@@ -39,7 +39,7 @@ export const createPlatformCtx = (
           title: "数据源选择",
           type: modalType,
           position,
-          width: "85%",
+          width: 1000,
           children: ({ close }) => {
             return (
               <DataSourceSelector
@@ -62,7 +62,7 @@ export const createPlatformCtx = (
         const { defaultValue, defaultVariableList, onSubmit } = options;
         const modalID = ShowModal({
           title: "表达式编辑",
-          width: "85%",
+          width: 1000,
           children: () => {
             return (
               <Expression
@@ -82,7 +82,7 @@ export const createPlatformCtx = (
         const { defaultValue, onSubmit, eventType, platformCtx } = options;
         const modalID = ShowModal({
           title: "低代码配置",
-          width: "85%",
+          width: 1000,
           children: () => {
             return (
               <LowCodeConfig
@@ -123,7 +123,7 @@ export const createPlatformCtx = (
         const { defaultValue, datasource, onSubmit } = options;
         const ModalID = ShowModal({
           title: "排序字段选择",
-          width: "85%",
+          width: 1000,
           children: ({ close }) => {
             return (
               <div className="p-4">

@@ -15,6 +15,7 @@ import {
   WidgetEntity,
 } from "@provider-app/platform-access-spec";
 import { Modal } from "antd";
+import classnames from "classnames";
 import {
   getPageDetailService,
   updatePageService,
@@ -58,6 +59,7 @@ class PageDesignerApp extends React.Component<
   state = {
     hoveringPath: [],
     selectedPath: [],
+    stageWidth: 1024,
   };
 
   selectedEntity!: WidgetEntity;
@@ -568,6 +570,7 @@ class PageDesignerApp extends React.Component<
   stageContext = {
     hoveringPath: this.state.hoveringPath,
     selectedPath: this.state.selectedPath,
+    stageWidth: this.state.stageWidth,
     changeHoveringPath: (nextPath) => {
       this.setState({
         hoveringPath: nextPath,
@@ -581,6 +584,12 @@ class PageDesignerApp extends React.Component<
         selectedPath: nextPath,
       });
       this.stageContext.selectedPath = nextPath;
+    },
+    changeStageWidth: (nextWidth) => {
+      this.setState({
+        stageWidth: nextWidth,
+      });
+      this.stageContext.stageWidth = nextWidth;
     },
   };
 
@@ -614,6 +623,13 @@ class PageDesignerApp extends React.Component<
 
     const activeEntityID = selectedEntity?.id;
 
+    const selectedItem = !!selectedEntity;
+
+    const appClasses = classnames([
+      "app-content",
+      selectedItem && "has-selected-item",
+    ]);
+
     // const { id: activeEntityID, entity: activeEntity } = selectedInfo;
 
     // if (!appContext.ready) {
@@ -638,7 +654,7 @@ class PageDesignerApp extends React.Component<
               />
             </header>
             <div
-              className="app-content"
+              className={appClasses}
               // style={{ top: 0 }}
             >
               <div className="comp-panel">
@@ -665,13 +681,14 @@ class PageDesignerApp extends React.Component<
                     }}
                     onStageClick={() => {
                       // SelectEntity(PageEntity);
+                      this.stageContext.changeSelectedPath([]);
                     }}
                     {...dispatcher}
                   />
                 )}
               </div>
-              <div className="prop-panel">
-                {selectedEntity && (
+              {selectedItem && (
+                <div className="prop-panel">
                   <PDPropertiesEditor
                     key={activeEntityID}
                     platformCtx={this.platformCtx}
@@ -680,8 +697,8 @@ class PageDesignerApp extends React.Component<
                     entityState={selectedEntity?.propState}
                     updateEntityState={this.updateEntityStateForSelected}
                   />
-                )}
-              </div>
+                </div>
+              )}
             </div>
           </div>
         </StageContext.Provider>

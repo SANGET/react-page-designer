@@ -27,7 +27,7 @@ export interface PageDesignerComponentPanelProps {
 const actionItems = [
   {
     icon: "FiGrid",
-    label: "组件面板",
+    label: "组件",
     render: () => <WidgetPanel />,
   },
   {
@@ -52,36 +52,21 @@ const actionItems = [
   },
   {
     icon: "FiLoader",
-    label: "查看属性项",
-    action: () => {
-      ShowModal({
-        title: "属性项",
-        type: "side",
-        position: "left",
-        children: () => {
-          return <PropDataDisplayer />;
-        },
-      });
+    label: "属性项",
+    render: () => {
+      return <PropDataDisplayer />;
     },
   },
   {
     icon: "FiCommand",
-    label: "查看页面描述 DSL",
-    action: ({ pageDSL }) => {
-      ShowModal({
-        title: "查看页面描述 DSL",
-        type: "side",
-        position: "left",
-        width: 600,
-        children: () => {
-          return <JSONDisplayer jsonData={pageDSL} />;
-        },
-      });
+    label: "页面DSL",
+    render: ({ pageDSL }) => {
+      return <JSONDisplayer jsonData={pageDSL} />;
     },
   },
   {
     icon: "FiCode",
-    label: "查看页面源代码",
+    label: "页面代码",
     action: ({ platformCtx, genPageCode }) => {
       genPageCode().then((res) => {
         const pageCode = res?.pageCode || "// 获取生成代码失败";
@@ -157,7 +142,7 @@ const PDWidgetPanel: React.FC<PageDesignerComponentPanelProps> = ({
           const isActive = activeItemIdx === idx;
           const itemClasses = classnames([
             isActive && "active",
-            "item px-2 py-4 text-gray-600",
+            "item py-4 text-gray-600",
           ]);
           return (
             <Tooltip
@@ -179,14 +164,19 @@ const PDWidgetPanel: React.FC<PageDesignerComponentPanelProps> = ({
                 }}
               >
                 <I className="text-2xl inline-block icon" />
+                <div>{label}</div>
               </div>
             </Tooltip>
           );
         })}
       </div>
       <div className="active-panel flex-1">
-        <div>
+        <div className="panel-body">
+          {/* <div className="panel-header">{activeItem.label}</div> */}
           {activeItem.render({
+            genPageCode,
+            platformCtx,
+            pageDSL,
             layoutNodeInfo,
             apiConfigMeta,
             onUpdateApiConfig,

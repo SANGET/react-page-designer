@@ -22,10 +22,14 @@
   padding: 10px;
 }
 
-.canvas-stage-container {
-  background-color: #fff;
-}
+// .canvas-stage-container {
+//   background-color: #fff;
+// }
 
 .canvas-stage {
   min-height: 100%;
+  background-color: #fff;
+  margin: 0 auto;
+  // margin-left: 50%;
+  // transform: translateX(-50%);
 }

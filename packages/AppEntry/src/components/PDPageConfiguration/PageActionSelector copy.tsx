@@ -197,7 +197,7 @@ export class PageActionSelector extends React.Component<IProps, IState> {
     return new Promise((resolve, reject) => {
       const modalID = ShowModal({
         title: "配置动作",
-        width: "85%",
+        width: 1000,
         children: () => {
           return (
             <div className="p-5">

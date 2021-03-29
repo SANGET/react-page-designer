@@ -1,4 +1,6 @@
 // 这里只是做总体的布局，样式调整在 layout-look.scss 中
+$top-index: 999;
+$sec-index: 998;
 
 .visual-app {
   position: absolute;
@@ -13,6 +15,7 @@
     right: 0;
     // bottom: $layout-header-height;
     height: $layout-header-height;
+    z-index: $top-index;
   }
   .app-content {
     position: absolute;
@@ -33,12 +36,14 @@
       position: absolute;
       top: 0;
       left: $layout-left-panel-width;
+      // right: 0;
       right: $layout-right-panel-width;
       bottom: 0;
       overflow-x: auto;
       // width: $layout-left-panel-width;
     }
     .prop-panel {
+      z-index: $sec-index;
       position: absolute;
       top: 0;
       // left: 0;
@@ -46,10 +51,18 @@
       bottom: 0;
       width: $layout-left-panel-width;
       overflow-y: auto;
+      background-color: #fff;
+      padding: 0 10px;
+      box-shadow: 0 2px 0 2px rgba(#000, 0.1);
     }
+
+    // &.has-selected-item {
+    //   .canvas-container {
+    //     right: $layout-right-panel-width;
+    //   }
+    // }
   }
   .app-footer {
-
   }
 }
 
@@ -58,4 +71,8 @@
   height: 100%;
   // min-width: 680px;
   overflow-y: auto;
+  // min-width: 1000px;
+  // width: 100%;
+  margin: 0 auto;
+  // transform: translateX(-25%);
 }
