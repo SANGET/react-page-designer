@@ -6,7 +6,10 @@ import {
   PlusSquareOutlined,
   ThunderboltOutlined,
 } from "@ant-design/icons";
-import { ChangeEntityState, PlatformCtx } from "@provider-app/platform-access-spec";
+import {
+  ChangeEntityState,
+  PlatformCtx,
+} from "@provider-app/platform-access-spec";
 import { Collapse, Form, Input, Radio, Select } from "antd";
 import { nanoid } from "nanoid";
 import React, { useState } from "react";

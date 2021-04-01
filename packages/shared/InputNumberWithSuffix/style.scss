@@ -1,0 +1,13 @@
+.input-number-with-suffix {
+  .ant-input-number {
+    border-radius: 2px 0px 0px 2px;
+    :focus {
+      position:relative;
+      z-index: 200;
+    }
+  }
+  .suffix{
+    margin-left: -1px;
+    border-radius: 0px 2px 2px 0px
+  }
+}

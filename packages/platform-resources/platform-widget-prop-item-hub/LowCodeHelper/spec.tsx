@@ -1,4 +1,7 @@
-import { PropItem, PropItemRenderContext } from "@provider-app/platform-access-spec";
+import {
+  PropItem,
+  PropItemRenderContext,
+} from "@provider-app/platform-access-spec";
 import React from "react";
 import { LowCodeComp } from "./comp";
 

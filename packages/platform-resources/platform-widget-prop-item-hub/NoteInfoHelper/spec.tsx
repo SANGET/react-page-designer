@@ -1,5 +1,8 @@
 import React from "react";
-import { PropItem, PropItemRenderContext } from "@provider-app/platform-access-spec";
+import {
+  PropItem,
+  PropItemRenderContext,
+} from "@provider-app/platform-access-spec";
 import { NoteInfoComp } from "./comp";
 
 /** 属性项编辑的组件属性 */

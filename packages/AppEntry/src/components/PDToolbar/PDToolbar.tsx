@@ -9,6 +9,7 @@ import { message, Modal } from "antd";
 import classnames from "classnames";
 import React, { useContext, useState } from "react";
 import { BiMobileAlt, BiDesktop } from "react-icons/bi";
+import { FiSettings } from "react-icons/fi";
 import { getAppPreviewUrl } from "@provider-app/provider-app-common/config/getPreviewUrl";
 import { loadPropItemMetadata } from "@provider-app/provider-app-common/services/widget-loader";
 import { Tooltip } from "react-tippy";
@@ -96,11 +97,15 @@ interface ToolbarCustomProps {
   changePageState;
   updateEntityState;
   delEntity;
+  changeStageWidth;
+  stageWidth;
 }
 
 const ToolbarCustom: React.FC<ToolbarCustomProps> = ({
   onReleasePage,
   getAppDescData,
+  changeStageWidth,
+  stageWidth,
   getPageContent,
   flatLayoutItems,
   pageMetadata,
@@ -114,7 +119,6 @@ const ToolbarCustom: React.FC<ToolbarCustomProps> = ({
 
   const [isShowPageSetting, setIsShowPageSetting] = useState(false);
   const platformCtx = useContext(PlatformContext);
-  const stageCtx = useContext(StageContext);
 
   const genPageCode = () => {
     return new Promise((resolve, reject) => {
@@ -140,7 +144,8 @@ const ToolbarCustom: React.FC<ToolbarCustomProps> = ({
     setIsShowPageSetting(false);
   };
 
-  const isMobileWidth = stageCtx.stageWidth === mobileWidth;
+  const isMobileWidth = stageWidth === mobileWidth;
+  console.log(stageWidth);
   const layoutModeIconClasses = classnames("text-2xl layout-mode-icon mr-4");
 
   return (
@@ -152,7 +157,7 @@ const ToolbarCustom: React.FC<ToolbarCustomProps> = ({
         <Tooltip title="PC 模式">
           <BiDesktop
             onClick={(e) => {
-              stageCtx.changeStageWidth(defaultStageWidth);
+              changeStageWidth(defaultStageWidth);
             }}
             className={`${layoutModeIconClasses}${
               !isMobileWidth ? " active" : ""
@@ -165,20 +170,22 @@ const ToolbarCustom: React.FC<ToolbarCustomProps> = ({
               isMobileWidth ? " active" : ""
             }`}
             onClick={(e) => {
-              stageCtx.changeStageWidth(mobileWidth);
+              changeStageWidth(mobileWidth);
             }}
           />
         </Tooltip>
         <span className="flex"></span>
-        <Button
-          className="mr10"
-          color="default"
+        <span
+          className="mr-6 items-center text-gray-600 hover:text-blue-600"
           onClick={(e) => {
             setIsShowPageSetting(true);
           }}
         >
-          页面设置
-        </Button>
+          <span className="flex items-center">
+            <FiSettings className="mr-2" />
+            <span>页面设置</span>
+          </span>
+        </span>
         <PreviewBtn
           appLocation={appLocation}
           genPageCode={genPageCode}

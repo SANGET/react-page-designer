@@ -172,8 +172,7 @@ export default class TableDSHelperComp extends React.Component<
         outside
         overlay={(helper) => {
           return (
-            <div className="column-selector-container"
-            style={{ height: 300 }}>
+            <div className="column-selector-container" style={{ height: 300 }}>
               {(Array.isArray(datasourceMeta) &&
                 datasourceMeta.map((ds) => {
                   const { columns, name: tableTitle } = ds;

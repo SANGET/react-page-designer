@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/horizontal-gutter-helper",
+  "description": "布局栅格列间距属性编辑",
+  "version": "0.0.1",
+  "author": "SANGET",
+  "license": "MIT",
+  "dependencies": {}
+}

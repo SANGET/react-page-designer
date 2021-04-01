@@ -46,8 +46,8 @@ const actionItems = [
   {
     icon: "FiAlignRight",
     label: "大纲树",
-    render: ({ layoutNodeInfo }) => (
-      <OutlineTree layoutNodeInfo={layoutNodeInfo} />
+    render: ({ layoutNodeInfo, stageCtx }) => (
+      <OutlineTree layoutNodeInfo={layoutNodeInfo} stageCtx={stageCtx} />
     ),
   },
   {
@@ -104,6 +104,7 @@ const PDWidgetPanel: React.FC<PageDesignerComponentPanelProps> = ({
   layoutNodeInfo,
   appLocation,
   getPageContent,
+  stageCtx,
   onUpdateApiConfig,
   // widgetPanelData,
   // ...other
@@ -179,6 +180,7 @@ const PDWidgetPanel: React.FC<PageDesignerComponentPanelProps> = ({
             pageDSL,
             layoutNodeInfo,
             apiConfigMeta,
+            stageCtx,
             onUpdateApiConfig,
           })}
         </div>

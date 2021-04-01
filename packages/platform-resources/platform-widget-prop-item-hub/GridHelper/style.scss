@@ -1,0 +1,16 @@
+.grid-helper {
+  .grid-panel {
+    .active .grid-content {
+      border-color: #376bfb
+    }
+    .edit {
+      top: 50%;
+      margin-top: -12px;
+      left: 50%;
+      margin-left: -8px;
+      font-size: 16px;
+      color: #778699
+    }
+  }
+  
+}

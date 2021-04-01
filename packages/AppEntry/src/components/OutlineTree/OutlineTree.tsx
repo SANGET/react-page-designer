@@ -62,22 +62,14 @@ const outlineItemRenderer = (stageCtx: StageContextRes) => (nodeItem) => {
   );
 };
 
-export class OutlineTree extends React.Component {
-  render() {
-    const { layoutNodeInfo } = this.props;
-    return (
-      <StageContext.Consumer>
-        {(stageCtx) => {
-          return (
-            <div className="outline-tree">
-              <LayoutRenderer
-                layoutNode={layoutNodeInfo}
-                componentRenderer={outlineItemRenderer(stageCtx)}
-              />
-            </div>
-          );
-        }}
-      </StageContext.Consumer>
-    );
-  }
-}
+export const OutlineTree = (props) => {
+  const { layoutNodeInfo, stageCtx } = props;
+  return (
+    <div className="outline-tree">
+      <LayoutRenderer
+        layoutNode={layoutNodeInfo}
+        componentRenderer={outlineItemRenderer(stageCtx)}
+      />
+    </div>
+  );
+};

@@ -1,71 +1,71 @@
 import React from "react";
 import { Input } from "antd";
 import { PropItemRenderContext } from "@provider-app/platform-access-spec";
-
-const FormItem = ({ title, value, changeEntityState, changeAttr }) => {
-  const realVal = value[changeAttr];
-  return (
-    <div className="mb-4">
-      <div>{title}</div>
-      <Input
-        value={realVal}
-        onChange={(e) => {
-          const { value: _val } = e.target;
-          changeEntityState({
-            attr: "style",
-            value: Object.assign({}, value, {
-              [changeAttr]: _val,
-            }),
-          });
-        }}
-      />
-    </div>
-  );
-};
+import { Width } from "./Width";
+import { Margin } from "./Margin";
+import { MARGIN_OPTIONS, PADDING_OPTIONS, OPACITY } from "./constants";
+import { Shadow } from "./Shadow";
+import { Border } from "./Border";
+import { FormItem } from "./FormItem";
 
 export const Comp: React.FC<PropItemRenderContext> = ({
   changeEntityState,
   editingWidgetState,
 }) => {
   const { style = {} } = editingWidgetState;
+  const changeStyle = (target) => {
+    changeEntityState({
+      attr: "style",
+      value: Object.assign({}, style, target),
+    });
+  };
   return (
     <>
-      <FormItem
-        title="内边距"
-        changeEntityState={changeEntityState}
-        changeAttr="padding"
-        value={style}
-      />
-      <FormItem
-        title="外边距"
-        changeEntityState={changeEntityState}
-        changeAttr="margin"
-        value={style}
-      />
-      <FormItem
-        title="外边界"
-        changeEntityState={changeEntityState}
-        changeAttr="border"
-        value={style}
-      />
-      <FormItem
-        title="高度"
-        changeEntityState={changeEntityState}
-        changeAttr="height"
-        value={style}
-      />
-      <FormItem
-        title="宽度"
-        changeEntityState={changeEntityState}
-        changeAttr="widget"
-        value={style}
-      />
-      <FormItem
-        title="display"
-        changeEntityState={changeEntityState}
-        changeAttr="display"
-        value={style}
-      />
+      <FormItem title="宽度" className="mb-4">
+        <Width
+          value={style.width}
+          onChange={(width) => changeStyle({ width })}
+        />
+      </FormItem>
+      <FormItem title="高度" className="mb-4">
+        <Width
+          value={style.height}
+          onChange={(height) => changeStyle({ height })}
+        />
+      </FormItem>
+      <FormItem title="外边距" className="mb-4">
+        <Margin
+          value={style.margin}
+          options={MARGIN_OPTIONS}
+          onChange={(margin) => changeStyle({ margin })}
+        />
+      </FormItem>
+      <FormItem title="内间距" className="mb-4">
+        <Margin
+          value={style.padding}
+          options={PADDING_OPTIONS}
+          onChange={(padding) => changeStyle({ padding })}
+        />
+      </FormItem>
+      <FormItem title="边框" className="mb-4">
+        <Border value={style} onChange={(border) => changeStyle(border)} />
+      </FormItem>
+      <FormItem title="阴影" className="mb-4">
+        <Shadow
+          value={style.boxShadow}
+          onChange={(boxShadow) => changeStyle({ boxShadow })}
+        />
+      </FormItem>
+      <FormItem title="不透明度" className="mb-4">
+        <Width
+          value={style.opacity}
+          onChange={(opacity) => changeStyle({ opacity })}
+          options={OPACITY}
+          min={0}
+          max={100}
+          precision={1}
+        />
+      </FormItem>
       <div className="mb-4">
         <div>样式代码</div>
         <Input.TextArea

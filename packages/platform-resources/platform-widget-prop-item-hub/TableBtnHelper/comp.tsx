@@ -26,7 +26,7 @@ interface TableBtnHelperCompState {
  * @param widgetRef
  * @returns
  */
-const prepareData = async (widgetRef) => {
+const prepareData = async (widgetRef, getPropItemMeta) => {
   const [widgetMeta] = await Promise.all([
     getWidgetMetadata(widgetRef),
     getPropItemGroupingData(),

@@ -1,6 +1,9 @@
 import React from "react";
 import { Input, Selector } from "@provider-app/shared-ui";
-import { PropItem, PropItemRenderContext } from "@provider-app/platform-access-spec";
+import {
+  PropItem,
+  PropItemRenderContext,
+} from "@provider-app/platform-access-spec";
 
 /** 属性项编辑的组件属性 */
 const whichAttr = "labelColor";

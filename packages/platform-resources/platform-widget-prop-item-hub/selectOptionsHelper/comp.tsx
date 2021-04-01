@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import classnames from "classnames";
 // import { Button, } from "@provider-app/shared-ui";
-import { PlatformCtx, PlatformDatasource } from "@provider-app/platform-access-spec";
+import {
+  PlatformCtx,
+  PlatformDatasource,
+} from "@provider-app/platform-access-spec";
 import { Input, Select, Button, List, Space, Form as AntdForm } from "antd";
 import { ShowModal } from "@deer-ui/core";
 import { CloseCircleOutlined, SettingOutlined } from "@ant-design/icons";
@@ -281,7 +284,9 @@ const ApiDataConfig = ({ onSubmit, platformCtx, defaultApiMeta }) => {
               });
             }}
           >
-            {defaultApiMeta?.params || apiMeta?.params ? "已配置" : "点击配置"}
+            {defaultApiMeta?.params?.length || apiMeta?.params?.length
+              ? "已配置"
+              : "点击配置"}
           </div>
         </AntdForm.Item>
       </div>
@@ -300,7 +305,7 @@ export const OptionsSelector: React.FC<OptionsSelectorProps> = ({
 }) => {
   const [currentType, setType] = useState(defaultOptions?.type || "custom");
   useEffect(() => {
-    if(!defaultOptions){
+    if (!defaultOptions) {
       onSubmit({
         type: "custom",
         optionsConfig: [{ showVal: "选项0", realVal: "0" }],
@@ -317,7 +322,7 @@ export const OptionsSelector: React.FC<OptionsSelectorProps> = ({
           onSubmit({
             type: value,
             optionsConfig: [{ showVal: "选项0", realVal: "0" }],
-            apiMeta: {}
+            apiMeta: {},
           });
         }}
       >

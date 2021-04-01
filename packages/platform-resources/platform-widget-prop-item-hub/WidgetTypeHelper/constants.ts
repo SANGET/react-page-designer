@@ -24,12 +24,12 @@ export const WIDGET_TYPE_MENU: IOptions[] = [
   {
     label: "单选框",
     key: "001",
-    value: ""
+    value: "Radio"
   },
   {
     label: "多选框",
     key: "002",
-    value: ""
+    value: "Checkbox"
   },
   {
     label: "时间框",

@@ -1,6 +1,9 @@
 import React from "react";
 import { PopModelSelector } from "@provider-app/shared-ui";
-import { PropItem, PropItemRenderContext } from "@provider-app/platform-access-spec";
+import {
+  PropItem,
+  PropItemRenderContext,
+} from "@provider-app/platform-access-spec";
 import { FieldSelector, SelectedField } from "./comp";
 
 const takeBindColumnInfo = (selectedField: SelectedField) => {

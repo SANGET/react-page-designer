@@ -38,8 +38,14 @@ import TimeValueHelperSpec from './TimeValueHelper/spec';
 import StyleHelperSpec from './StyleHelper/spec';
 import TimeModeHelperSpec from './TimeModeHelper/spec';
 import TimeTypeHelperSpec from './TimeTypeHelper/spec';
+import GridHelperSpec from './GridHelper/spec';
+import HorizontalGutterHelperSpec from './HorizontalGutterHelper/spec';
+import VerticalGutterHelperSpec from './VerticalGutterHelper/spec';
 
 const propItemCollection = {
+  "prop_horizontal_gutter": HorizontalGutterHelperSpec,
+  "prop_vertical_gutter": VerticalGutterHelperSpec,
+  "prop_grid_value": GridHelperSpec,
   "prop_time_type": TimeTypeHelperSpec,
   "prop_time_mode": TimeModeHelperSpec,
   "prop_action_config": ActionHelperSpec,

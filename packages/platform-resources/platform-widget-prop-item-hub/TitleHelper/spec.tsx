@@ -1,5 +1,8 @@
 import React, { useEffect } from "react";
-import { PropItem, PropItemRenderContext } from "@provider-app/platform-access-spec";
+import {
+  PropItem,
+  PropItemRenderContext,
+} from "@provider-app/platform-access-spec";
 import { TitleEditorComp } from "./comp";
 
 @PropItem({

@@ -88,7 +88,7 @@ export interface WrapperFacContext {
   /** 扁平的 node 结构 */
   getLayoutNode: GetLayoutNode
   updateEntityState: VEDispatcher['UpdateEntityState']
-  stageCtx: StageContextRes
+  getStageCtx: () => StageContextRes
 }
 
 /**

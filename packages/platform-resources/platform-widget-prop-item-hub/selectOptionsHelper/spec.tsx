@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Input, Select, Button } from "antd";
-import { PropItem, PropItemRenderContext } from "@provider-app/platform-access-spec";
+import {
+  PropItem,
+  PropItemRenderContext,
+} from "@provider-app/platform-access-spec";
 // import { ShowModal } from "@deer-ui/core";
 import { OptionsSelector, OptionsSelectorData } from "./comp";
 // import { ApiCreator } from "../../../ApiGenerator/ApiCreator";
@@ -39,16 +42,16 @@ export default class OptionsHelperSpec {
             attr: "propOptions",
             value: config,
           });
-          if(config.type === "custom"){
+          if (config.type === "custom") {
             const options = {};
-            config.optionsConfig?.forEach((item)=>{
+            config.optionsConfig?.forEach((item) => {
               options[item.realVal] = item.showVal;
             });
             changeEntityState({
               attr: "options",
               value: options,
             });
-          }else {
+          } else {
             changeEntityState({
               attr: "options",
               value: undefined,

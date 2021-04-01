@@ -1,6 +1,9 @@
 import React from "react";
 import { Input } from "antd";
-import { PropItem, PropItemRenderContext } from "@provider-app/platform-access-spec";
+import {
+  PropItem,
+  PropItemRenderContext,
+} from "@provider-app/platform-access-spec";
 import { FieldSelector, SelectedField } from "./comp";
 
 // const takeBindColumnInfo = (selectedField: SelectedField) => {
@@ -51,7 +54,21 @@ export default class FieldHelperSpec {
     return (
       <div>
         <Input
-          defaultValue={field}
+          value={field}
+          onFocus={() => {
+            platformCtx.selector.openPageDSSelector({
+              pageMetadata: platformCtx.meta.getPageMeta(),
+              onSubmit: (item) => {
+                const { field: changeField } = item;
+                console.log(changeField);
+                // console.log(item);
+                changeEntityState({
+                  attr: "field",
+                  value: changeField,
+                });
+              },
+            });
+          }}
           onChange={(e) => {
             // console.log(e.target.value);
             const { value } = e.target;

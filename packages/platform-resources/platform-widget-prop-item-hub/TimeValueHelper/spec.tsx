@@ -1,5 +1,8 @@
 import React from "react";
-import { PropItem, PropItemRenderContext } from "@provider-app/platform-access-spec";
+import {
+  PropItem,
+  PropItemRenderContext,
+} from "@provider-app/platform-access-spec";
 import { ValueHelper } from "./comp";
 
 @PropItem({
@@ -7,9 +10,9 @@ import { ValueHelper } from "./comp";
   label: "值",
   whichAttr: ["realVal", "exp", "variable", "timeMode", "timeType"],
   defaultValues: {
-     "timeMode": "fullTime" ,
-     "timeType": "stamp"
-  }
+    timeMode: "fullTime",
+    timeType: "stamp",
+  },
 })
 export default class TimeValueHelperSpec {
   render(ctx: PropItemRenderContext) {

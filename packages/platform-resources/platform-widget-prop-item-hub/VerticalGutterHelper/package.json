@@ -1,0 +1,8 @@
+{
+  "name": "@platform-widget-prop-item/vertical-gutter-helper",
+  "description": "布局栅格行间距属性编辑",
+  "version": "0.0.1",
+  "author": "SANGET",
+  "license": "MIT",
+  "dependencies": {}
+}

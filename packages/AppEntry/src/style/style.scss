@@ -32,10 +32,11 @@ $themeColor: #376bfb;
     padding: 10px;
   }
   .group-title {
-    padding: 5px 10px;
-    font-size: 14px;
+    padding: 6px 0;
+    // font-size: 14px;
     color: #999;
     // background-color: #fafafa;
+    // margin-bottom: 5px;
   }
 }
 
@@ -51,6 +52,7 @@ svg {
 
 .component-panel-container {
   .active-panel {
+    // background-color: #fafafa;
     .panel-body {
       padding: 8px 12px;
     }
@@ -61,7 +63,7 @@ svg {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f7f7f7;
+    background-color: #fafafa;
 
     .item {
       width: 100%;
@@ -82,20 +84,23 @@ svg {
       flex-wrap: wrap;
       // justify-content: space-between;
       padding: 10px 0;
-      margin: -$widgetMargin;
+      // margin: -$widgetMargin;
       .drag-comp-item {
         display: flex;
-        flex-direction: column;
+        // flex-direction: column;
         justify-items: center;
         align-items: center;
       }
       .item {
-        padding: 5px 0;
-        // background-color: #fafafa;
         // width: 30%;
-        flex-basis: 30%;
-        border: 1px solid transparent;
-        margin: 0 $widgetMargin $widgetMargin;
+        background-color: #fafafa;
+        flex-basis: 48%;
+        border: 1px solid #eee;
+        padding: 6px 12px;
+        &:nth-child(odd) {
+          margin-right: 4%;
+        }
+        margin-bottom: $widgetMargin;
 
         &:hover {
           background-color: #eee;
@@ -103,9 +108,9 @@ svg {
         }
       }
       .widget-icon {
-        font-size: 22px;
+        font-size: 14px;
         color: #666;
-        margin: 3px 0;
+        margin: 0 5px 0 0;
         // display: flex;
       }
     }

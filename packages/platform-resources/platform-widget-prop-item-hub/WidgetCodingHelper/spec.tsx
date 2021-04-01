@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import { Input } from "antd";
-import { PropItem, PropItemRenderContext } from "@provider-app/platform-access-spec";
+import {
+  PropItem,
+  PropItemRenderContext,
+} from "@provider-app/platform-access-spec";
 
 const WidgetCodeComp: React.FC<PropItemRenderContext> = (props) => {
   const {

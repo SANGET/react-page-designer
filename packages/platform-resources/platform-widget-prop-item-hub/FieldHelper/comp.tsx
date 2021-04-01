@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import classnames from "classnames";
 import { Button } from "@provider-app/shared-ui";
-import { PlatformColumn, PlatformDatasource } from "@provider-app/platform-access-spec";
+import {
+  PlatformColumn,
+  PlatformDatasource,
+} from "@provider-app/platform-access-spec";
 
 /**
  * 已选中的字段

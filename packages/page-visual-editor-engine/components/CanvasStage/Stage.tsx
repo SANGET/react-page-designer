@@ -358,7 +358,7 @@ class CanvasStage extends React.Component<CanvasStageProps> {
     onItemEnter: this.handleItemEnter,
     onItemClick: this.handleSelectEntityForClick,
     updateEntityState: this.props.UpdateEntityState,
-    stageCtx: this.props.stageCtx,
+    getStageCtx: () => this.props.stageCtx,
   };
 
   render() {

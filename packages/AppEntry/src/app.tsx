@@ -6,11 +6,7 @@ import {
   VisualEditorState,
 } from "@provider-app/page-visual-editor-engine/core";
 import {
-  ChangeDataSourceParam,
-  ChangeDataSourcesParam,
   ChangeMetadataOptions,
-  GetVariableData,
-  PlatformDatasource,
   ProviderPageProps,
   WidgetEntity,
 } from "@provider-app/platform-access-spec";
@@ -19,17 +15,20 @@ import classnames from "classnames";
 import {
   getPageDetailService,
   updatePageService,
-  updatePageFile,
 } from "@provider-app/provider-app-common/services";
 import produce from "immer";
 import pick from "lodash/pick";
 import React from "react";
 import { getAppConfig } from "@provider-app/provider-app-common/config";
 import { loadExternalScriptsSync } from "@provider-app/provider-app-common/utils/loadExternalScripts";
-import { treeNodeHelper } from "@provider-app/page-visual-editor-engine/utils";
+import {
+  treeNodeHelper,
+  TreeNodePath,
+} from "@provider-app/page-visual-editor-engine/utils";
 import {
   defaultStageWidth,
   StageContext,
+  StageContextRes,
 } from "@provider-app/page-visual-editor-engine/utils/stage-context";
 import CanvasStage from "./components/PDCanvasStage";
 import { PDPropertiesEditor } from "./components/PDPropertiesEditor";
@@ -56,11 +55,71 @@ interface VisualEditorAppProps extends VisualEditorState {
   dispatcher: VEDispatcher;
 }
 
+const StageStateManager = ({
+  layoutNodeInfo,
+  onUpdateApiConfig,
+  stageWidth,
+  onSubmitAPIMeta,
+  onAddEntity,
+  handleDeleteEntity,
+  changeSelectedPath,
+  selectedPath,
+  pageMetadata,
+  appContext,
+  getPageContent,
+  dispatcher,
+}) => {
+  const [hoveringPath, setHoveringPath] = React.useState<TreeNodePath>([]);
+  const stageCtx: StageContextRes = {
+    changeHoveringPath: (nextPath) => setHoveringPath(nextPath),
+    changeSelectedPath,
+    hoveringPath,
+    selectedPath,
+  };
+  return (
+    <>
+      <div className="comp-panel">
+        <WidgetPanel
+          layoutNodeInfo={layoutNodeInfo}
+          onUpdateApiConfig={onUpdateApiConfig}
+          onSubmitAPIMeta={onSubmitAPIMeta}
+          pageMetadata={pageMetadata}
+          getPageContent={getPageContent}
+          stageCtx={stageCtx}
+        />
+      </div>
+      <div className="canvas-container" style={{ height: "100%" }}>
+        {!appContext.ready ? (
+          <LoadingTip />
+        ) : (
+          <CanvasStage
+            // selectedInfo={selectedInfo}
+            layoutNodeInfo={layoutNodeInfo}
+            pageMetadata={pageMetadata}
+            onAddEntity={onAddEntity}
+            stageCtx={stageCtx}
+            stageWidth={stageWidth}
+            onEntityClick={(treePath) => {
+              changeSelectedPath(treePath);
+            }}
+            onStageClick={() => {
+              // SelectEntity(PageEntity);
+              setHoveringPath([]);
+              changeSelectedPath([]);
+            }}
+            onDeleteEntity={handleDeleteEntity}
+            {...dispatcher}
+          />
+        )}
+      </div>
+    </>
+  );
+};
+
 class PageDesignerApp extends React.Component<
   VisualEditorAppProps & ProviderPageProps
 > {
   state = {
-    hoveringPath: [],
     selectedPath: [],
     stageWidth: defaultStageWidth,
   };
@@ -87,6 +146,12 @@ class PageDesignerApp extends React.Component<
     } catch (e) {
       console.error(e);
     }
+  };
+
+  changeStageWidth = (nextVal) => {
+    this.setState({
+      stageWidth: nextVal,
+    });
   };
 
   /**
@@ -444,7 +509,7 @@ class PageDesignerApp extends React.Component<
    * 添加控件变量的规则，响应添加
    */
   onAddEntity = (entity, treeNodePath) => {
-    this.stageContext.changeSelectedPath(treeNodePath);
+    this.changeSelectedPath(treeNodePath);
 
     this.changePageMetaStradegy({
       type: "create",
@@ -570,30 +635,12 @@ class PageDesignerApp extends React.Component<
     // changeEntityState: this.changeEntityState,
   });
 
-  stageContext = {
-    hoveringPath: this.state.hoveringPath,
-    selectedPath: this.state.selectedPath,
-    stageWidth: this.state.stageWidth,
-    changeHoveringPath: (nextPath) => {
-      this.setState({
-        hoveringPath: nextPath,
-      });
-      this.stageContext.hoveringPath = nextPath;
-    },
-    changeSelectedPath: (nextPath) => {
-      // 选中组件实例
-      this.selectedEntity = this.getSelectedEntity(nextPath);
-      this.setState({
-        selectedPath: nextPath,
-      });
-      this.stageContext.selectedPath = nextPath;
-    },
-    changeStageWidth: (nextWidth) => {
-      this.setState({
-        stageWidth: nextWidth,
-      });
-      this.stageContext.stageWidth = nextWidth;
-    },
+  changeSelectedPath = (nextPath) => {
+    // 选中组件实例
+    this.selectedEntity = this.getSelectedEntity(nextPath);
+    this.setState({
+      selectedPath: nextPath,
+    });
   };
 
   getSelectedEntity = (selectedPath) => {
@@ -611,6 +658,28 @@ class PageDesignerApp extends React.Component<
     return resItem;
   };
 
+  onSubmitAPIMeta = (apiConfigMeta, type = "create") => {
+    const { id } = apiConfigMeta;
+    const metaIDInfo = {
+      [type === "rm" ? "rmMetaID" : "metaID"]: id,
+    };
+    this.changePageMetaStradegy({
+      type,
+      metaAttr: "apiMeta",
+      data: apiConfigMeta,
+      ...metaIDInfo,
+    });
+  };
+
+  /**
+   * 删除实例
+   * @param treeNodePath
+   * @param entity
+   */
+  handleDeleteEntity = (treeNodePath, entity) => {
+    this.props.dispatcher.DelEntity(treeNodePath, entity);
+  };
+
   render() {
     const {
       dispatcher,
@@ -621,6 +690,7 @@ class PageDesignerApp extends React.Component<
       flatLayoutItems,
       appLocation,
     } = this.props;
+    const { stageWidth } = this.state;
     // const { selectedPath } = this.state;
     const { selectedEntity } = this;
 
@@ -640,71 +710,55 @@ class PageDesignerApp extends React.Component<
     // }
     return (
       <PlatformContext.Provider value={this.platformCtx}>
-        <StageContext.Provider value={this.stageContext}>
-          <div className="visual-app bg-white">
-            <header className="app-header">
-              <ToolBar
-                getAppDescData={this.getAppDescData}
-                getPageContent={this.getPageContent}
-                pageMetadata={pageMetadata}
-                flatLayoutItems={flatLayoutItems}
-                onReleasePage={this.onReleasePage}
-                changePageState={this.changePageState}
-                appLocation={appLocation}
-                pageState={appContext.pageState}
-                updateEntityState={this.updateEntityState}
-                delEntity={this.delEntity}
-              />
-            </header>
-            <div
-              className={appClasses}
-              // style={{ top: 0 }}
-            >
-              <div className="comp-panel">
-                <WidgetPanel
-                  appLocation={appLocation}
-                  getPageContent={this.getPageContent}
-                  layoutNodeInfo={layoutInfo}
-                  onUpdateApiConfig={this.onUpdateApiConfig}
+        <div className="visual-app bg-white">
+          <header className="app-header">
+            <ToolBar
+              getAppDescData={this.getAppDescData}
+              getPageContent={this.getPageContent}
+              changeStageWidth={this.changeStageWidth}
+              pageMetadata={pageMetadata}
+              stageWidth={stageWidth}
+              flatLayoutItems={flatLayoutItems}
+              onReleasePage={this.onReleasePage}
+              changePageState={this.changePageState}
+              appLocation={appLocation}
+              pageState={appContext.pageState}
+              updateEntityState={this.updateEntityState}
+              delEntity={this.delEntity}
+            />
+          </header>
+          <div
+            className={appClasses}
+            // style={{ top: 0 }}
+          >
+            <StageStateManager
+              selectedPath={this.state.selectedPath}
+              changeSelectedPath={this.changeSelectedPath}
+              getPageContent={this.getPageContent}
+              layoutNodeInfo={layoutInfo}
+              stageWidth={stageWidth}
+              onUpdateApiConfig={this.onUpdateApiConfig}
+              onSubmitAPIMeta={this.onSubmitAPIMeta}
+              onAddEntity={this.onAddEntity}
+              handleDeleteEntity={this.handleDeleteEntity}
+              pageMetadata={pageMetadata}
+              appContext={appContext}
+              dispatcher={dispatcher}
+            />
+            {selectedItem && (
+              <div className="prop-panel">
+                <PDPropertiesEditor
+                  key={activeEntityID}
+                  platformCtx={this.platformCtx}
                   pageMetadata={pageMetadata}
+                  selectedEntity={selectedEntity}
+                  entityState={selectedEntity?.propState}
+                  updateEntityState={this.updateEntityStateForSelected}
                 />
               </div>
-              <div className="canvas-container p-4" style={{ height: "100%" }}>
-                {!appContext.ready ? (
-                  <LoadingTip />
-                ) : (
-                  <CanvasStage
-                    // selectedInfo={selectedInfo}
-                    layoutNodeInfo={layoutInfo}
-                    pageMetadata={pageMetadata}
-                    onAddEntity={this.onAddEntity}
-                    onEntityClick={(treeNodePath) => {
-                      // console.log(treeNodePath);
-                      this.stageContext.changeSelectedPath(treeNodePath);
-                    }}
-                    onStageClick={() => {
-                      // SelectEntity(PageEntity);
-                      this.stageContext.changeSelectedPath([]);
-                    }}
-                    {...dispatcher}
-                  />
-                )}
-              </div>
-              {selectedItem && (
-                <div className="prop-panel">
-                  <PDPropertiesEditor
-                    key={activeEntityID}
-                    platformCtx={this.platformCtx}
-                    pageMetadata={pageMetadata}
-                    selectedEntity={selectedEntity}
-                    entityState={selectedEntity?.propState}
-                    updateEntityState={this.updateEntityStateForSelected}
-                  />
-                </div>
-              )}
-            </div>
+            )}
           </div>
-        </StageContext.Provider>
+        </div>
       </PlatformContext.Provider>
     );
   }

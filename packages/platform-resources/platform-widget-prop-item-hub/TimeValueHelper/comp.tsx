@@ -69,13 +69,16 @@ export const ValueHelper: React.FC<ValueHelperProps> = ({
       return {};
     };
     const getPicker = () => {
-      if(timeMode === FULLTIME) return {};
+      if (timeMode === FULLTIME) return {};
       return { picker: timeMode };
     };
-    const handleChange = (value)=>{
+    const handleChange = (value) => {
       changeEntityState([
         {
-          value: timeType === "string" ? value?.format("YYYY-MM-DD HH:mm:ss") : value?.valueOf(),
+          value:
+            timeType === "string"
+              ? value?.format("YYYY-MM-DD HH:mm:ss")
+              : value?.valueOf(),
           attr: "realVal",
         },
         /** 需要将 value 清空 */

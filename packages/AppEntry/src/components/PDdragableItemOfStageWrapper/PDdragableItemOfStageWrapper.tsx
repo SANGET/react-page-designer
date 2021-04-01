@@ -39,8 +39,8 @@ const WidgetActionArea = ({
       <div className="tip-info">
         <div className="flex items-center pointer-events-none">
           {/* <div className="info tip-info-bg">
-            {entity.label} {devInfo}
-          </div> */}
+             {entity.label} {devInfo}
+           </div> */}
           {extra && (
             <div className="tip-info-bg pointer-events-auto">{extra}</div>
           )}
@@ -62,14 +62,14 @@ export const PDdragableItemOfStageWrapper: DragableItemWrapperFac = ({
   onDelete,
   getLayoutNode,
   getEntityProps,
-  stageCtx,
+  getStageCtx,
   // getHoveringEntity, setHoveringEntity
 }) => (propsForChild) => {
   const { id, idx, treeNodePath: _treeNodePath, children } = propsForChild;
   /** treeNodePath 由于变量被后来的覆盖了，需要采用不可变数据 */
   const treeNodePath = [..._treeNodePath];
 
-  const { hoveringPath, selectedPath, changeHoveringPath } = stageCtx;
+  const { hoveringPath, selectedPath, changeHoveringPath } = getStageCtx();
   // console.log(hoveringPath);
 
   const ctx = { idx, id, treeNodePath };
@@ -168,22 +168,22 @@ export const PDdragableItemOfStageWrapper: DragableItemWrapperFac = ({
       ]}
     >
       {/* <WidgetRenderer entity={currEntity} entityState={entityState || {}}>
-      {children}
-    </WidgetRenderer> */}
+       {children}
+     </WidgetRenderer> */}
       {/* <DrapItemWrapper
-      id={id}
-      treeNodePath={treeNodePath}
-      currEntity={currEntity}
-      onDelete={() => onDelete(actionCtx)}
-      onClick={(e) => {
-        e.stopPropagation();
-        onItemClick(actionCtx);
-      }}
-    >
-    </DrapItemWrapper> */}
+       id={id}
+       treeNodePath={treeNodePath}
+       currEntity={currEntity}
+       onDelete={() => onDelete(actionCtx)}
+       onClick={(e) => {
+         e.stopPropagation();
+         onItemClick(actionCtx);
+       }}
+     >
+     </DrapItemWrapper> */}
       {/* <WidgetRenderer entity={currEntity} entityState={entityState || {}}>
-        {children}
-      </WidgetRenderer> */}
+         {children}
+       </WidgetRenderer> */}
       <WidgetActionArea
         _noLayoutWrapper
         extra={
@@ -214,8 +214,8 @@ export const PDdragableItemOfStageWrapper: DragableItemWrapperFac = ({
       />
 
       {/* <WidgetRenderer entity={currEntity} entityState={entityState || {}}>
-      {children}
-    </WidgetRenderer> */}
+       {children}
+     </WidgetRenderer> */}
       {isLayout ? (
         children
       ) : (
