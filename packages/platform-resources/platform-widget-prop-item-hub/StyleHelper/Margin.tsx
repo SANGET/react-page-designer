@@ -187,7 +187,7 @@ export const Margin = (props) => {
   /** 获取展示数据 */
   const showMargin = () => {
     if (margin in MARGIN) return MARGIN[margin];
-    if (margin.split(" ").length > 0) return "自定义";
+    if (margin?.split(" ").length > 0) return "自定义";
     return margin;
   };
   const marginShowValue = showMargin();

@@ -1,4 +1,4 @@
-import { EditableWidgetMeta } from "@provider-app/platform-access-spec";
+import { EditableWidgetMeta } from "@hyc/platform-access-spec";
 import { makeWidgetEntity } from "../../utils";
 
 const flexLayoutMeta = (defaultValues): EditableWidgetMeta => {
@@ -37,5 +37,33 @@ export const makeLayoutEntity = (getPropItemMeta) => {
         span: 12
       }), getPropItemMeta),
     ],
+    propItemsRely: {
+      propItemRefs: [
+      {
+        "propID": "prop_grid_value",
+        "editAttr": ["grid", "hGutter", "vGutter"],
+        "defaultValues": { 
+          "grid": [{ "span": 24 }, { "span": 12 }, { "span": 12 }],
+          hGutter: 0,
+          vGutter: 0
+         }
+      },
+      {
+        "propID": "prop_horizontal_gutter",
+        "editAttr": ["hGutter"],
+        "defaultValues": { "hGutter": 0 }
+      },
+      {
+        "propID": "prop_vertical_gutter",
+        "editAttr": ["vGutter"],
+        "defaultValues": { "vGutter": 0 }
+      },
+      {
+        "propID": "prop_style",
+        "editAttr": ["style"],
+        "defaultValues": { "style": { "width": "100%", "height": "120px", "margin": "0px", "padding": "0px", "backgroundColor": "transparent" } }
+        
+      }
+    ] }
   }, getPropItemMeta);
 };
